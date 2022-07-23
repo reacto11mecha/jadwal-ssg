@@ -1,0 +1,33 @@
+.Jadwal {
+  text-align: left;
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.table {
+  width: 100%;
+}
+.center {
+  text-align: center;
+}
+
+.highlighted {
+  background-color: #8ecae6;
+}
+
+.highlightedNextDay {
+  background-color: #219ebc;
+  color: white;
+}
+
+@media (min-width: 300px) and (max-width: 1056px) {
+  .table {
+    width: 95%;
+  }
+
+  .scrollableHorizontal {
+    overflow-x: auto;
+  }
+}

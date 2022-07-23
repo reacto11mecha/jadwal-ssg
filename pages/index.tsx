@@ -4,9 +4,9 @@ import Link from "next/link";
 import path from "path";
 import fs from "fs";
 
-import styles from "../styles/Home.module.css";
+import styles from "@/styles/Home.module.css";
 
-import type { allClassSchedule } from "../types/jadwal";
+import type { allClassSchedule } from "@/types/jadwal";
 
 export const getStaticProps: GetStaticProps = async () => {
   const jadwalPath = path.join(path.resolve(), "data", "jadwal.json");
@@ -41,7 +41,7 @@ const Home = ({
         <ul
           className={`flex one two-500 three-600 four-800 ${styles.jadwalList}`}
         >
-          {classLists.map((className) => (
+          {classLists.map((className: string) => (
             <li key={className} className={styles.listItem}>
               <Link href={`/class/${className}`}>
                 <a>Jadwal Kelas {className.replace("-", " ")}</a>
