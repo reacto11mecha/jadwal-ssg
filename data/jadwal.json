@@ -1,0 +1,2466 @@
+[
+  {
+    "className": "X-1",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "B. INDO",
+          "B. INDO",
+          "PKN",
+          "PKN",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "BK",
+          "SUNDA",
+          "SUNDA"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "GEO",
+          "GEO",
+          "GEO",
+          "PAI",
+          "PAI",
+          "PAI",
+          "PKWU",
+          "PKWU",
+          "B. INDO",
+          "B. INDO"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "KIMIA",
+          "KIMIA",
+          "KIMIA",
+          "MTK",
+          "FIS",
+          "FIS",
+          "FIS",
+          "FIS",
+          "MTK",
+          "MTK"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "BIO",
+          "BIO",
+          "BIO",
+          "SOSIO",
+          "SOSIO",
+          "SOSIO",
+          "PENJAS",
+          "PENJAS",
+          "PENJAS"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "EKO",
+          "EKO",
+          "EKO",
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH",
+          "TIK",
+          "TIK",
+          "TIK"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "X-2",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "B.INDO",
+          "B.INDO",
+          "MTK",
+          "MTK",
+          "TIK",
+          "TIK",
+          "TIK"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "PKWU",
+          "PKWU",
+          "FIS",
+          "FIS",
+          "FIS",
+          "BK",
+          "B.INDO",
+          "B.INDO",
+          "MTK",
+          "MTK"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "KIMIA",
+          "KIMIA",
+          "KIMIA",
+          "SUNDA",
+          "SUNDA",
+          "PKN",
+          "PKN"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "SOSIO",
+          "SOSIO",
+          "SOSIO",
+          "GEO",
+          "GEO",
+          "GEO",
+          "PAI",
+          "PAI",
+          "PAI"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "BIO",
+          "BIO",
+          "BIO",
+          "EKO",
+          "EKO",
+          "EKO",
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "X-3",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "GEO",
+          "GEO",
+          "GEO",
+          "BK",
+          "B.INDO",
+          "B.INDO",
+          "PENJAS",
+          "PENJAS",
+          "PENJAS"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "PKN",
+          "PKN",
+          "TIK",
+          "TIK",
+          "SUNDA",
+          "SUNDA",
+          "TIK",
+          "PAI",
+          "PAI",
+          "PAI"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "PKWU",
+          "PKWU",
+          "EKO",
+          "EKO",
+          "EKO",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "KIMIA",
+          "KIMIA",
+          "KIMIA"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "B.INDO",
+          "B.INDO",
+          "MTK",
+          "BIO",
+          "BIO",
+          "BIO",
+          "SOSIO",
+          "SOSIO",
+          "SOSIO"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH",
+          "FIS",
+          "FIS",
+          "FIS",
+          "MTK",
+          "MTK",
+          "MTK"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "X-4",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "KIMIA",
+          "KIMIA",
+          "KIMIA",
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH",
+          "GEO",
+          "GEO",
+          "GEO"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "SUNDA",
+          "SUNDA",
+          "PKWU",
+          "PKWU",
+          "B.INDO",
+          "B.INDO",
+          "BK",
+          "BIO",
+          "BIO",
+          "BIO"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "PAI",
+          "PAI",
+          "PAI",
+          "TIK",
+          "TIK",
+          "TIK",
+          "MTK",
+          "EKO",
+          "EKO",
+          "EKO"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "PKN",
+          "PKN",
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "B.INDO",
+          "B.INDO"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "PJOK",
+          "PJOK",
+          "PJOK",
+          "MTK",
+          "MTK",
+          "MTK",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "X-5",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "TIK",
+          "TIK",
+          "TIK",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "PJOK",
+          "PJOK",
+          "PJOK"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "B.INDO",
+          "B.INDO",
+          "PKN",
+          "PKN",
+          "BIO",
+          "BIO",
+          "BIO",
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "SUNDA",
+          "SUNDA",
+          "PKWU",
+          "PKWU",
+          "PAI",
+          "PAI",
+          "PAI",
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "EKO",
+          "EKO",
+          "EKO",
+          "B.INDO",
+          "B.INDO",
+          "MTK",
+          "BK",
+          "B.INGGRIS",
+          "B.INGGRIS"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "MTK",
+          "GEO",
+          "GEO",
+          "GEO",
+          "KIMIA",
+          "KIMIA",
+          "KIMIA"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "X-6",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "MTK",
+          "MTK",
+          "MTK",
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "BIO",
+          "BIO",
+          "BIO",
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH",
+          "SUNDA",
+          "SUNDA",
+          "PKWU",
+          "PKWU"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "KIMIA",
+          "KIMIA",
+          "KIMIA",
+          "GEO",
+          "GEO",
+          "GEO",
+          "BK",
+          "PAI",
+          "PAI",
+          "PAI"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "TIK",
+          "TIK",
+          "TIK",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "B.INDO",
+          "B.INDO",
+          "PKN",
+          "PKN"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "EKO",
+          "EKO",
+          "EKO",
+          "PJOK",
+          "PJOK",
+          "PJOK",
+          "MTK",
+          "B.INDO",
+          "B.INDO"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "X-7",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO",
+          "EKO",
+          "EKO",
+          "EKO",
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "B.INDO",
+          "B.INDO",
+          "PKN",
+          "PKN",
+          "BK",
+          "PJOK",
+          "PJOK",
+          "PJOK"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "SUNDA",
+          "SUNDA",
+          "KIMIA",
+          "KIMIA",
+          "KIMIA",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "BIO",
+          "BIO",
+          "BIO",
+          "PAI",
+          "PAI",
+          "PAI",
+          "GEO",
+          "GEO",
+          "GEO"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "B.INDO",
+          "B.INDO",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "PKWU",
+          "PKWU",
+          "TIK",
+          "TIK",
+          "TIK"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "X-8",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "EKO",
+          "EKO",
+          "EKO",
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO",
+          "TIK",
+          "TIK",
+          "TIK"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "GEO",
+          "GEO",
+          "GEO",
+          "MTK",
+          "MTK",
+          "MTK",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "SUNDA",
+          "SUNDA"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "PKN",
+          "PKN",
+          "B.INDO",
+          "B.INDO",
+          "PKWU",
+          "PKWU",
+          "MTK",
+          "KIMIA",
+          "KIMIA",
+          "KIMIA"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "PAI",
+          "PAI",
+          "PAI",
+          "BIO",
+          "BIO",
+          "BIO",
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "BK",
+          "B.INDO",
+          "B.INDO",
+          "PJOK",
+          "PJOK",
+          "PJOK"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "X-9",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "BK",
+          "BK",
+          "BK",
+          "GEO",
+          "GEO",
+          "GEO",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "EKO",
+          "EKO",
+          "EKO",
+          "BK",
+          "PJOK",
+          "PJOK",
+          "PJOK",
+          "TIK",
+          "TIK",
+          "TIK"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "B.INDO",
+          "B.INDO",
+          "PKN",
+          "PKN",
+          "MTK",
+          "MTK",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "SUNDA",
+          "SUNDA"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH",
+          "KIMIA",
+          "KIMIA",
+          "KIMIA",
+          "BIO",
+          "BIO",
+          "BIO"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "B.INDO",
+          "B.INDO",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "X-10",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "SUNDA",
+          "SUNDA",
+          "BK",
+          "BK",
+          "BK"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "PJOK",
+          "PJOK",
+          "PJOK",
+          "EKO",
+          "EKO",
+          "EKO",
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO",
+          "BK"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "BIO",
+          "BIO",
+          "BIO",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "PKN",
+          "PKN",
+          "B.INDO",
+          "B.INDO",
+          "B.INDO"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "KIMIA",
+          "KIMIA",
+          "KIMIA",
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH",
+          "TIK",
+          "TIK",
+          "TIK"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "GEO",
+          "GEO",
+          "GEO",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "B.INDO",
+          "MTK",
+          "MTK"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "X-11",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "PJOK",
+          "PJOK",
+          "PJOK",
+          "SOSIO",
+          "SOSIO",
+          "SOSIO",
+          "BIO",
+          "BIO",
+          "BIO"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "PAI",
+          "PAI",
+          "PAI",
+          "GEO",
+          "GEO",
+          "GEO",
+          "MTK",
+          "MTK",
+          "B.INGGRIS",
+          "B.INGGRIS"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "B. INDO",
+          "B. INDO",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH",
+          "MTK",
+          "MTK"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "EKO",
+          "EKO",
+          "EKO",
+          "TIK",
+          "TIK",
+          "TIK",
+          "BK",
+          "SUNDA",
+          "SUNDA"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "PKN",
+          "PKN",
+          "KIMIA",
+          "KIMIA",
+          "KIMIA",
+          "B. INDO",
+          "B. INDO",
+          "PKWU",
+          "PKWU"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XI-IPA1",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "SEJARAH",
+          "SEJARAH",
+          "PKN",
+          "PKN",
+          "EKO",
+          "EKO",
+          "BK",
+          "FIS",
+          "FIS"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "BIO",
+          "BIO",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "FIS",
+          "FIS",
+          "B. INDO",
+          "B. INDO"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "PAI",
+          "PAI",
+          "PAI",
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "SUNDA",
+          "SUNDA"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "B. INDO",
+          "B. INDO",
+          "EKO",
+          "EKO",
+          "MTK",
+          "MTK",
+          "MTK",
+          "MTK",
+          "MTK"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "SENI",
+          "SENI",
+          "KIMIA",
+          "KIMIA",
+          "BIO",
+          "BIO",
+          "KIMIA",
+          "KIMIA",
+          "MTK"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XI-IPA2",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "PKN",
+          "PKN",
+          "BIO",
+          "BIO",
+          "FIS",
+          "FIS",
+          "B. INDO",
+          "B. INDO",
+          "B. INDO"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "BIO",
+          "BIO",
+          "MTK",
+          "MTK",
+          "SUNDA",
+          "SUNDA",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "MTK",
+          "MTK"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "SEJARAH",
+          "SEJARAH",
+          "MTK",
+          "MTK",
+          "EKO",
+          "EKO",
+          "KIMIA",
+          "KIMIA",
+          "B.INGGRIS",
+          "B.INGGRIS"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "PAI",
+          "PAI",
+          "PAI",
+          "BK",
+          "KIMIA",
+          "KIMIA"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "EKO",
+          "EKO",
+          "SENI",
+          "SENI",
+          "FIS",
+          "FIS",
+          "MTK",
+          "MTK",
+          "B. INDO"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XI-IPA3",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "FIS",
+          "FIS",
+          "BIO",
+          "BIO",
+          "MTK",
+          "MTK",
+          "MTK"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "KIMIA",
+          "KIMIA",
+          "MTK",
+          "MTK",
+          "BK",
+          "B. INDO",
+          "B. INDO",
+          "B. INDO",
+          "SENI",
+          "SENI"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "PAI",
+          "PAI",
+          "PAI",
+          "EKO",
+          "EKO",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "PKN",
+          "PKN",
+          "MTK",
+          "MTK",
+          "MTK",
+          "KIMIA",
+          "KIMIA",
+          "FIS",
+          "FIS"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "BIO",
+          "BIO",
+          "EKO",
+          "EKO",
+          "SUNDA",
+          "SUNDA",
+          "B. INDO",
+          "SEJARAH",
+          "SEJARAH"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XI-IPA4",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "JERMAN",
+          "JERMAN",
+          "B. INDO",
+          "B. INDO",
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "MTK",
+          "MTK"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "SENI",
+          "SENI",
+          "KIMIA",
+          "KIMIA",
+          "BIO",
+          "BIO",
+          "MTK",
+          "MTK",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "SUNDA",
+          "SUNDA",
+          "PKN",
+          "PKN",
+          "MTK",
+          "MTK",
+          "JERMAN",
+          "JERMAN"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "SEJARAH",
+          "SEJARAH",
+          "B. INDO",
+          "B. INDO",
+          "FIS",
+          "FIS",
+          "PAI",
+          "PAI",
+          "PAI"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "BIO",
+          "BIO",
+          "KIMIA",
+          "KIMIA",
+          "FIS",
+          "FIS",
+          "BK"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XI-IPA5",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "KIMIA",
+          "KIMIA",
+          "MTK",
+          "MTK",
+          "BIO",
+          "BIO"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "SEJARAH",
+          "SEJARAH",
+          "JERMAN",
+          "JERMAN",
+          "KIMIA",
+          "KIMIA",
+          "SENI",
+          "SENI",
+          "MTK",
+          "MTK"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "PKN",
+          "PKN",
+          "FIS",
+          "FIS",
+          "SUNDA",
+          "SUNDA",
+          "BIO",
+          "BIO",
+          "MTK",
+          "MTK"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "FIS",
+          "FIS",
+          "MTK",
+          "MTK",
+          "JERMAN",
+          "JERMAN",
+          "B. INDO",
+          "B. INDO",
+          "B. INDO"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "PAI",
+          "PAI",
+          "PAI",
+          "B. INDO",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "BK",
+          "B.INGGRIS",
+          "B.INGGRIS"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XI-IPA6",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "FIS",
+          "FIS",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "JERMAN",
+          "B. INDO",
+          "B. INDO",
+          "MTK",
+          "MTK"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "SENI",
+          "SENI",
+          "FIS",
+          "FIS",
+          "JERMAN",
+          "JERMAN",
+          "BIO",
+          "BIO"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "SUNDA",
+          "SUNDA",
+          "MTK",
+          "MTK",
+          "BIO",
+          "BIO",
+          "BK",
+          "PAI",
+          "PAI",
+          "PAI"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "SEJARAH",
+          "SEJARAH",
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "KIMIA",
+          "KIMIA"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "KIMIA",
+          "KIMIA",
+          "PKN",
+          "PKN",
+          "MTK",
+          "MTK",
+          "JERMAN",
+          "B. INDO",
+          "B. INDO"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XI-IPS1",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "PKWU",
+          "PKWU",
+          "B. INDO",
+          "B. INDO",
+          "SEJARAH",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "JERMAN",
+          "JERMAN"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "SOSIO",
+          "SOSIO",
+          "BK",
+          "PAI",
+          "PAI",
+          "PAI",
+          "GEO",
+          "GEO",
+          "JERMAN",
+          "JERMAN"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "EKO",
+          "EKO",
+          "SENI",
+          "SENI",
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "GEO",
+          "GEO",
+          "SUNDA",
+          "SUNDA",
+          "EKO",
+          "EKO",
+          "MTK",
+          "MTK",
+          "MTK"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "B. INDO",
+          "B. INDO",
+          "SEJARAH",
+          "SEJARAH",
+          "SOSIO",
+          "SOSIO",
+          "PKN",
+          "PKN",
+          "MTK"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XI-IPS2",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "SEJARAH",
+          "SEJARAH",
+          "JERMAN",
+          "JERMAN",
+          "PKWU",
+          "PKWU",
+          "SOSIO",
+          "SOSIO",
+          "SOSIO"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "PAI",
+          "PAI",
+          "PAI",
+          "SOSIO",
+          "SENI",
+          "SENI",
+          "B. INDO",
+          "B. INDO",
+          "GEO",
+          "GEO"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "JERMAN",
+          "JERMAN",
+          "EKO",
+          "EKO",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "GEO",
+          "GEO",
+          "SEJARAH",
+          "SEJARAH"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "SUNDA",
+          "SUNDA",
+          "MTK",
+          "MTK",
+          "MTK",
+          "EKO",
+          "EKO",
+          "B. INDO",
+          "B. INDO"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "PKN",
+          "PKN",
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "BK",
+          "MTK",
+          "SEJARAH",
+          "SEJARAH"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XI-IPS3",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "PAI",
+          "PAI",
+          "PAI",
+          "SEJARAH",
+          "B.INGGRIS",
+          "B.INGGRIS"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "SUNDA",
+          "SUNDA",
+          "MTK",
+          "MTK",
+          "GEO",
+          "GEO",
+          "SEJARAH",
+          "SEJARAH"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "SENI",
+          "SENI",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "EKO",
+          "EKO",
+          "SOSIO",
+          "SOSIO",
+          "B. INDO",
+          "B. INDO"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "EKO",
+          "EKO",
+          "GEO",
+          "GEO",
+          "B. INDO",
+          "B. INDO",
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "MTK",
+          "MTK",
+          "PKN",
+          "PKN",
+          "BK",
+          "SOSIO",
+          "SOSIO"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XI-IPS4",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "PAI",
+          "PAI",
+          "PAI",
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "BK",
+          "SEJARAH",
+          "SEJARAH"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "B. INDO",
+          "B. INDO",
+          "EKO",
+          "EKO",
+          "SOSIO",
+          "SOSIO",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "PKN",
+          "PKN"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "SEJARAH",
+          "SEJARAH",
+          "EKO",
+          "EKO",
+          "SEJARAH",
+          "SEJARAH",
+          "SENI",
+          "SENI",
+          "GEO",
+          "GEO"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "B. INDO",
+          "B. INDO",
+          "SUNDA",
+          "SUNDA",
+          "JERMAN",
+          "JERMAN",
+          "JERMAN"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "SOSIO",
+          "SOSIO",
+          "GEO",
+          "GEO",
+          "JERMAN"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XI-BHS",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "B. INDO",
+          "B. INDO",
+          "JEPANG",
+          "JEPANG",
+          "B. INDO",
+          "B. INDO",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "B.INGGRIS"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "EKO",
+          "EKO",
+          "B. INDO",
+          "B. INDO",
+          "FISIKA/PKWU",
+          "FISIKA/PKWU",
+          "MTK",
+          "PAI",
+          "PAI",
+          "PAI"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "SEJARAH",
+          "SEJARAH",
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO",
+          "B. INDO",
+          "B. INDO",
+          "PKN",
+          "PKN",
+          "SENI",
+          "SENI"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO",
+          "SUNDA",
+          "SUNDA",
+          "EKO",
+          "EKO",
+          "MTK",
+          "MTK",
+          "MTK"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "JEPANG",
+          "JEPANG",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "BK",
+          "B.INGGRIS"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XII-PA1",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "BIO",
+          "BIO",
+          "SENI",
+          "SENI",
+          "MTK",
+          "MTK",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "B.INGGRIS"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "BK",
+          "MTK",
+          "MTK",
+          "SUNDA",
+          "SUNDA",
+          "KIMIA",
+          "KIMIA"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "BIO",
+          "BIO",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "B. INDO",
+          "B. INDO",
+          "KIMIA",
+          "KIMIA"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "PAI",
+          "PAI",
+          "PAI",
+          "FIS",
+          "FIS",
+          "B. INDO",
+          "B. INDO",
+          "MTK",
+          "MTK"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "PKN",
+          "PKN",
+          "SEJARAH",
+          "SEJARAH",
+          "PKWU",
+          "PKWU",
+          "B.INGGRIS",
+          "FIS",
+          "FIS"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XII-IPA2",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "MTK",
+          "MTK",
+          "BIO",
+          "BIO",
+          "KIMIA",
+          "B. INDO",
+          "B. INDO"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "PAI",
+          "PAI",
+          "PAI",
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "MTK",
+          "MTK",
+          "FIS",
+          "FIS"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "BIO",
+          "BIO",
+          "MTK",
+          "MTK",
+          "SENI",
+          "SENI",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "B. INDO",
+          "B. INDO"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "KIMIA",
+          "KIMIA",
+          "KIMIA",
+          "FIS",
+          "FIS",
+          "SUNDA",
+          "SUNDA"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "PKWU",
+          "PKWU",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "BK",
+          "SEJARAH",
+          "SEJARAH",
+          "PKN",
+          "PKN"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XII-IPA3",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "BIO",
+          "BIO",
+          "MTK",
+          "KIMIA",
+          "KIMIA",
+          "KIMIA",
+          "KIMIA"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "PAI",
+          "PAI",
+          "PAI",
+          "FIS",
+          "FIS",
+          "B. INDO",
+          "B. INDO"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "BK",
+          "BIO",
+          "BIO",
+          "SENI",
+          "SENI",
+          "FIS",
+          "FIS"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "SUNDA",
+          "SUNDA",
+          "B. INDO",
+          "B. INDO"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "SEJARAH",
+          "SEJARAH",
+          "PKWU",
+          "PKWU",
+          "PKN",
+          "PKN",
+          "MTK",
+          "MTK",
+          "MTK"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XII-IPA4",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "PAI",
+          "PAI",
+          "PAI",
+          "B. INDO",
+          "B. INDO",
+          "SENI",
+          "SENI",
+          "MTK",
+          "MTK"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "KIMIA",
+          "KIMIA",
+          "B. INDO",
+          "B. INDO",
+          "KIMIA",
+          "KIMIA",
+          "SUNDA",
+          "SUNDA"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "FIS",
+          "FIS",
+          "PKWU",
+          "PKWU",
+          "MTK",
+          "MTK",
+          "BIO",
+          "BIO",
+          "B.INGGRIS",
+          "B.INGGRIS"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "SEJARAH",
+          "SEJARAH",
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "PKN",
+          "PKN"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "FIS",
+          "FIS",
+          "MTK",
+          "MTK",
+          "BIO",
+          "BIO",
+          "BK",
+          "B.INGGRIS",
+          "B.INGGRIS"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XII-IPS1",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "GEO",
+          "GEO",
+          "EKO",
+          "EKO",
+          "SOSIO",
+          "SOSIO",
+          "B.INDO",
+          "SENI",
+          "SENI"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "EKO",
+          "EKO",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "B.INDO",
+          "B.INDO",
+          "B.INDO",
+          "PENJAS",
+          "PENJAS",
+          "PENJAS"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "GEO",
+          "GEO",
+          "PAI",
+          "PAI",
+          "PAI",
+          "SEJARAH",
+          "SUNDA",
+          "SUNDA",
+          "JEPANG",
+          "JEPANG"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH",
+          "JEPANG",
+          "JEPANG"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "SOSIO",
+          "SOSIO",
+          "PKN",
+          "PKN",
+          "BK",
+          "MTK",
+          "MTK",
+          "PKWU",
+          "PKWU"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XII-IPS2",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "SOSIO",
+          "SOSIO",
+          "GEO",
+          "GEO",
+          "EKO",
+          "EKO",
+          "JEPANG",
+          "SUNDA",
+          "SUNDA"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "EKO",
+          "EKO",
+          "SENI",
+          "SENI",
+          "SEJARAH",
+          "SEJARAH",
+          "PKWU",
+          "PKWU"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "GEO",
+          "GEO",
+          "B.INDO",
+          "B.INDO",
+          "BK",
+          "PAI",
+          "PAI",
+          "PAI"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "SOSIO",
+          "SOSIO",
+          "MTK",
+          "MTK",
+          "B.INDO",
+          "B.INDO",
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "SEJARAH",
+          "PKN",
+          "PKN",
+          "JEPANG",
+          "JEPANG",
+          "JEPANG"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XII-IPS3",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "B.INDO",
+          "B.INDO",
+          "SOSIO",
+          "SOSIO",
+          "GEO",
+          "GEO",
+          "BK",
+          "EKO",
+          "EKO"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "B.INDO",
+          "B.INDO",
+          "SEJARAH",
+          "SEJARAH",
+          "EKO",
+          "EKO",
+          "SOSIO",
+          "SOSIO",
+          "MTK",
+          "MTK"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "SENI",
+          "SENI",
+          "MTK",
+          "MTK",
+          "GEO",
+          "GEO",
+          "SEJARAH",
+          "SEJARAH",
+          "PKWU",
+          "PKWU"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "SEJARAH",
+          "SEJARAH",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "JEPANG",
+          "JEPANG",
+          "PAI",
+          "PAI",
+          "PAI"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "JEPANG",
+          "JEPANG",
+          "SUNDA",
+          "SUNDA",
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "PKN",
+          "PKN"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XII-IPS4",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "BK",
+          "SUNDA",
+          "SUNDA",
+          "B.INDO",
+          "B.INDO"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "SENI",
+          "SENI",
+          "EKO",
+          "EKO",
+          "MTK",
+          "MTK",
+          "PKN",
+          "PKN"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "EKO",
+          "EKO",
+          "B.INDO",
+          "B.INDO",
+          "PKWU",
+          "PKWU",
+          "MTK",
+          "MTK",
+          "SEJARAH",
+          "SEJARAH"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "PAI",
+          "PAI",
+          "PAI",
+          "SOSIO",
+          "GEO",
+          "GEO"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "SEJARAH",
+          "SEJARAH",
+          "GEO",
+          "GEO",
+          "SEJARAH",
+          "SEJARAH",
+          "SOSIO",
+          "SOSIO",
+          "SOSIO"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XII-IPS5",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "B.INDO",
+          "B.INDO",
+          "SEJARAH",
+          "EKO",
+          "EKO"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "SENI",
+          "SENI",
+          "SOSIO",
+          "SOSIO",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "EKO",
+          "EKO",
+          "B.INDO",
+          "B.INDO"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "MTK",
+          "MTK",
+          "SOSIO",
+          "SOSIO",
+          "SEJARAH",
+          "SEJARAH",
+          "GEO",
+          "GEO",
+          "PKN",
+          "PKN"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "PAI",
+          "PAI",
+          "PAI",
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "BK",
+          "PKWU",
+          "PKWU"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "GEO",
+          "GEO",
+          "MTK",
+          "MTK",
+          "SEJARAH",
+          "SEJARAH",
+          "SEJARAH",
+          "SUNDA",
+          "SUNDA"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "XII-BHS",
+    "schedule": [
+      {
+        "day": 1,
+        "lessons": [
+          "JEPANG",
+          "JEPANG",
+          "PKWU",
+          "PKWU",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "PAI",
+          "PAI",
+          "PAI"
+        ]
+      },
+      {
+        "day": 2,
+        "lessons": [
+          "B. INDO",
+          "B. INDO",
+          "B.INDO",
+          "B.INDO",
+          "MTK",
+          "MTK",
+          "SENI",
+          "SENI",
+          "SOSIO",
+          "SOSIO"
+        ]
+      },
+      {
+        "day": 3,
+        "lessons": [
+          "B.INDO",
+          "B.INDO",
+          "SEJARAH",
+          "SEJARAH",
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO",
+          "JEPANG",
+          "JEPANG",
+          "PKN",
+          "PKN"
+        ]
+      },
+      {
+        "day": 4,
+        "lessons": [
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "B. INDO",
+          "B. INDO",
+          "BK",
+          "B.INGGRIS",
+          "B.INGGRIS",
+          "SOSIO/ANTRO",
+          "SOSIO/ANTRO"
+        ]
+      },
+      {
+        "day": 5,
+        "lessons": [
+          "SUNDA",
+          "SUNDA",
+          "SOSIO",
+          "SOSIO",
+          "PENJAS",
+          "PENJAS",
+          "PENJAS",
+          "MTK",
+          "MTK"
+        ]
+      }
+    ]
+  }
+]

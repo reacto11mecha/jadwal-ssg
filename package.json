@@ -10,7 +10,10 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@fontsource/lato": "^4.5.8",
+    "@fontsource/poppins": "^4.5.8",
     "next": "12.2.3",
+    "picnic": "^7.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
