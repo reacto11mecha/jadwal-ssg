@@ -22,7 +22,7 @@ module.exports = {
         ],
         css: ["./styles/globals.css"],
         defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-        safelist: ["html", "body"],
+        safelist: ["html", "body", /data-.*/],
       },
     ],
   ],
