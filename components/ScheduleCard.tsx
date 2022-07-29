@@ -4,13 +4,13 @@ import { getDay } from "@/utils/getDay";
 import styles from "@/styles/ClassSSG.module.css";
 import type { ISchedule, ITimeInfo } from "@/types/jadwal";
 
-export const ScheduleCard = ({
+export function ScheduleCard({
   perDay,
   waktu,
 }: {
   perDay: ISchedule;
   waktu: ITimeInfo;
-}) => {
+}) {
   const [tanggal, setTanggal] = useState("");
 
   useEffect(() => {
@@ -58,8 +58,8 @@ export const ScheduleCard = ({
                     <td>
                       {waktu.TimeAllocation.find(
                         (time) => time.currentDay === perDay.day
-                      )
-                        .alloc.find((allocation) => allocation.JAM === idx + 1)
+                      )!
+                        .alloc.find((allocation) => allocation.JAM === idx + 1)!
                         .WAKTU.join(" - ")}
                     </td>
                   </tr>
@@ -71,4 +71,4 @@ export const ScheduleCard = ({
       </article>
     </div>
   );
-};
+}
