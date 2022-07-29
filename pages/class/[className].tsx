@@ -1,11 +1,16 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+import { useEffect } from "react";
 import path from "path";
 import fs from "fs";
 
-import { getDay } from "@/utils/getDay";
 import styles from "@/styles/ClassSSG.module.css";
+import { ScheduleCard } from "@/components/ScheduleCard";
 
-import type { allClassSchedule, IIndividualClass } from "@/types/jadwal";
+import type {
+  allClassSchedule,
+  IIndividualClass,
+  ITimeInfo,
+} from "@/types/jadwal";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const jadwalPath = path.join(path.resolve(), "data", "jadwal.json");
@@ -20,44 +25,36 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const jadwalPath = path.join(path.resolve(), "data", "jadwal.json");
+  const dataPath = path.join(path.resolve(), "data");
+
+  const jadwalPath = path.join(dataPath, "jadwal.json");
   const jadwalString = fs.readFileSync(jadwalPath, "utf8");
+
+  const waktuPath = path.join(dataPath, "waktu.json");
+  const waktuString = fs.readFileSync(waktuPath, "utf8");
 
   const jadwal = JSON.parse(jadwalString) as allClassSchedule;
   const selectedClass = (jadwal as allClassSchedule).find(
     (kelas) => kelas.className === params!.className!
   )! as IIndividualClass;
-  const actualSchedule = selectedClass.schedule;
 
-  const longest = actualSchedule
-    .map(({ lessons }) => lessons.length)
-    .sort((a, b) => b - a)[0];
-  const newArray = Array.from(new Array(longest));
-
-  const remappedColumn = newArray.map((_, idx) =>
-    actualSchedule.map((data) => ({
-      lessons: data.lessons[idx] ?? null,
-      index: selectedClass.schedule.findIndex((x) => x.day === data.day) + 1,
-    }))
-  );
+  const waktu = JSON.parse(waktuString) as ITimeInfo;
 
   return {
     props: {
       jadwal: selectedClass,
-      remappedColumn,
+      waktu,
     },
   };
 };
 
-type remappedColumnReturnType = {
-  lessons: string | null;
-  index: number;
-};
-
 const Jadwal = ({
   jadwal,
-  remappedColumn,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  waktu,
+}: InferGetStaticPropsType<typeof getStaticProps> & {
+  jadwal: IIndividualClass;
+  waktu: ITimeInfo;
+}) => {
   return (
     <div className={`flex one ${styles.Jadwal}`}>
       <div>
@@ -65,29 +62,10 @@ const Jadwal = ({
           Jadwal Pelajaran Kelas {jadwal.className.replace("-", " ")}
         </h1>
       </div>
-      <div className={styles.scrollableHorizontal}>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              {jadwal.schedule.map(({ day }: { day: number }) => (
-                <th key={day} className={styles.center}>
-                  {getDay(day)}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {remappedColumn.map(
-              (data: remappedColumnReturnType[], idx: number) => (
-                <tr key={idx}>
-                  {data.map((looped, idx) => (
-                    <td key={idx}>{looped.lessons}</td>
-                  ))}
-                </tr>
-              )
-            )}
-          </tbody>
-        </table>
+      <div className="flex one two-1000">
+        {jadwal.schedule.map((perDay) => (
+          <ScheduleCard key={perDay.day} perDay={perDay} waktu={waktu} />
+        ))}
       </div>
     </div>
   );

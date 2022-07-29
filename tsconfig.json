@@ -19,6 +19,7 @@
       "@/styles/*": ["styles/*"],
       "@/utils/*": ["utils/*"],
       "@/types/*": ["types/*"],
+      "@/components/*": ["components/*"],
       "@/context/*": ["context/*"]
     }
   },

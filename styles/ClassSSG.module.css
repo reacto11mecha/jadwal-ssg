@@ -23,10 +23,6 @@
 }
 
 @media (min-width: 300px) and (max-width: 1056px) {
-  .table {
-    width: 95%;
-  }
-
   .scrollableHorizontal {
     overflow-x: auto;
   }
