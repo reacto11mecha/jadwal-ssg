@@ -58,3 +58,7 @@ npm start
 # atau menggunakan pnpm
 pnpm start
 ```
+
+## Lisensi
+
+Project ini bernaung di bawah lisensi [GPL-3.0 License](LICENSE)
