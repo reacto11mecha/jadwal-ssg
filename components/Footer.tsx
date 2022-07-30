@@ -1,15 +1,7 @@
-import dynamic from "next/dynamic";
+import { BsGithub, BsFillMoonFill, BsSun } from "react-icons/bs";
 import { useDarkMode } from "@/context/darkMode";
 
 import styles from "@/styles/Footer.module.css";
-
-const BsGithub = dynamic(() =>
-  import("react-icons/bs").then((mod) => mod.BsGithub)
-);
-const BsFillMoonFill = dynamic(() =>
-  import("react-icons/bs").then((mod) => mod.BsFillMoonFill)
-);
-const BsSun = dynamic(() => import("react-icons/bs").then((mod) => mod.BsSun));
 
 export const Footer = () => {
   const { isDarkTheme, toggleTheme } = useDarkMode();
@@ -32,7 +24,7 @@ export const Footer = () => {
           className={`card ${styles.CardStyle} ${styles.themeToggler}`}
           onClick={(e) => {
             toggleTheme();
-            e.target.blur();
+            (e.target as HTMLElement).blur();
           }}
         >
           <header>{isDarkTheme ? <BsFillMoonFill /> : <BsSun />}</header>
