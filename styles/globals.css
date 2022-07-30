@@ -1,4 +1,4 @@
-html[data-theme="light"] {
+:root {
   --color-background-primary: #fff;
   --color-background-secondary: #fff;
   --color-border-card: #aaa;

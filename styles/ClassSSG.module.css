@@ -22,6 +22,15 @@
   color: white;
 }
 
+.mainContent {
+  padding-bottom: 2em;
+}
+
+.card {
+  background-color: var(--color-background-secondary);
+  border-color: var(--color-border-second);
+}
+
 @media (min-width: 300px) and (max-width: 1056px) {
   .scrollableHorizontal {
     overflow-x: auto;

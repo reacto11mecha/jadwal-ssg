@@ -41,11 +41,13 @@ export function ScheduleCard({
     };
 
     setTime();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div>
-      <article className="card">
+      <article className={`card ${styles.card}`}>
         <footer>
           <div>
             <h3>

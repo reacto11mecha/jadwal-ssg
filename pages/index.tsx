@@ -4,6 +4,7 @@ import Link from "next/link";
 import path from "path";
 import fs from "fs";
 
+import { Footer } from "@/components/Footer";
 import styles from "@/styles/Home.module.css";
 
 import type { allClassSchedule } from "@/types/jadwal";
@@ -23,35 +24,37 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home = ({
   classLists,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return (
-    <div>
-      <Head>
-        <title>Daftar Jadwal Pelajaran</title>
-        <meta name="description" content="Daftar jadwal pelajaran" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <header className={styles.header}>
-        <h1>Daftar Jadwal Pelajaran</h1>
-        <h2>Tahun Ajaran 2022/2023</h2>
-        <h3>SMA Negeri 12 Kota Bekasi</h3>
-      </header>
-      <hr className={styles.horizontalRuler} />
-      <main>
-        <ul
-          className={`flex one two-500 three-600 four-800 ${styles.jadwalList}`}
-        >
-          {classLists.map((className: string) => (
-            <li key={className} className={styles.listItem}>
-              <Link href={`/class/${className}`}>
-                <a>Jadwal Kelas {className.replace("-", " ")}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </main>
-    </div>
-  );
-};
+}: InferGetStaticPropsType<typeof getStaticProps>) => (
+  <div>
+    <Head>
+      <title>Daftar Jadwal Pelajaran SMA Negeri 12 Kota Bekasi</title>
+      <meta
+        name="description"
+        content="Daftar jadwal pelajaran SMAN 12 Bekasi"
+      />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <header className={styles.header}>
+      <h1>Daftar Jadwal Pelajaran</h1>
+      <h2>Tahun Ajaran 2022/2023</h2>
+      <h3>SMA Negeri 12 Kota Bekasi</h3>
+    </header>
+    <hr className={styles.horizontalRuler} />
+    <main className={styles.mainContent}>
+      <ul
+        className={`flex one two-500 three-600 four-800 ${styles.jadwalList}`}
+      >
+        {classLists.map((className: string) => (
+          <li key={className} className={styles.listItem}>
+            <Link href={`/class/${className}`}>
+              <a>Jadwal Kelas {className.replace("-", " ")}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </main>
+    <Footer />
+  </div>
+);
 
 export default Home;

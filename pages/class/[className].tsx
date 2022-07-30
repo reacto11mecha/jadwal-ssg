@@ -3,8 +3,10 @@ import { useEffect } from "react";
 import path from "path";
 import fs from "fs";
 
+import Head from "next/head";
 import styles from "@/styles/ClassSSG.module.css";
 import { ScheduleCard } from "@/components/ScheduleCard";
+import { Footer } from "@/components/Footer";
 
 import type {
   allClassSchedule,
@@ -57,12 +59,24 @@ const Jadwal = ({
 }) => {
   return (
     <div className={`flex one ${styles.Jadwal}`}>
+      <Head>
+        {/* prettier-ignore */}
+        <title>{`Jadwal Pelajaran Kelas ${jadwal.className.replace("-", " ")}`}</title>
+        <meta
+          name="description"
+          content={`Info lengkap tentang jadwal pelajaran kelas ${jadwal.className.replace(
+            "-",
+            " "
+          )}`}
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div>
         <h1 className={styles.center}>
           Jadwal Pelajaran Kelas {jadwal.className.replace("-", " ")}
         </h1>
       </div>
-      <div className="flex one two-1000">
+      <div className={`flex one two-1000 ${styles.mainContent}`}>
         {jadwal.schedule.map((perDay) => (
           <ScheduleCard
             key={perDay.day}
@@ -72,6 +86,7 @@ const Jadwal = ({
           />
         ))}
       </div>
+      <Footer />
     </div>
   );
 };
