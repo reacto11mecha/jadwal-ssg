@@ -2,13 +2,15 @@ import { useState, useEffect } from "react";
 import { getDay } from "@/utils/getDay";
 
 import styles from "@/styles/ClassSSG.module.css";
-import type { ISchedule, ITimeInfo } from "@/types/jadwal";
+import type { ISchedule, IIndividualClass, ITimeInfo } from "@/types/jadwal";
 
 export function ScheduleCard({
   perDay,
+  jadwal,
   waktu,
 }: {
   perDay: ISchedule;
+  jadwal: IIndividualClass;
   waktu: ITimeInfo;
 }) {
   const [tanggal, setTanggal] = useState("");
@@ -17,8 +19,17 @@ export function ScheduleCard({
     const setTime = async () => {
       const DateTime = (await import("luxon")).DateTime;
 
+      const isNextWeek =
+        DateTime.now()
+          .setZone(waktu.TZ)
+          .startOf("week")
+          .plus({ days: jadwal.schedule.length })
+          .startOf("day")
+          .toMillis() <= DateTime.now().setZone(waktu.TZ).toMillis();
+
       const time = DateTime.now()
         .setZone(waktu.TZ)
+        .plus({ weeks: isNextWeek ? 1 : 0 })
         .startOf("week")
         .plus({
           days: perDay.day > 1 && perDay.day <= 7 ? perDay.day - 1 : 0,
@@ -45,7 +56,7 @@ export function ScheduleCard({
             <table className={`primary ${styles.table}`}>
               <thead>
                 <tr>
-                  <th>Jam ke-</th>
+                  <th>#</th>
                   <th>Mapel</th>
                   <th>Waktu</th>
                 </tr>

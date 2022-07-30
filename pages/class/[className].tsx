@@ -64,7 +64,12 @@ const Jadwal = ({
       </div>
       <div className="flex one two-1000">
         {jadwal.schedule.map((perDay) => (
-          <ScheduleCard key={perDay.day} perDay={perDay} waktu={waktu} />
+          <ScheduleCard
+            key={perDay.day}
+            jadwal={jadwal}
+            perDay={perDay}
+            waktu={waktu}
+          />
         ))}
       </div>
     </div>
