@@ -32,3 +32,29 @@ npm install
 # atau menggunakan pnpm
 pnpm install
 ```
+
+### Mengubah Jadwal dan Waktu
+
+Informasi statis yang ada di website ini terdapat pada file [`data/jadwal.json`](data/jadwal.json) dan [`data/waktu.json`](data/waktu.json). Ubah kedua file tersebut sesuai apa yang di inginkan. Untuk masalah struktur, cek typing yang sesuai pada file [`types/jadwal.json`](types/jadwal.json).
+
+> Sumber data statis yang ada di project ini berasal dari [`xlsx-schedule-generator`](https://github.com/reacto11mecha/xlsx-schedule-generator) yang menghasilkan jadwal pelajaran dari sebuah file xlsx excel. Cek repositori tersebut untuk lebih lengkapnya.
+
+### Menjalankan Aplikasi
+
+Setelah mengubah jadwal pelajaran, build next js agar website bisa diakses.
+
+```sh
+npm run build
+
+# atau menggunakan pnpm
+pnpm build
+```
+
+Setelahnya jalankan next js, laman default berada di http://localhost:3000
+
+```sh
+npm start
+
+# atau menggunakan pnpm
+pnpm start
+```
