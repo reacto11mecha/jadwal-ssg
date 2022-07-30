@@ -1622,15 +1622,15 @@
       {
         "day": 1,
         "lessons": [
-          "B. INDO",
-          "B. INDO",
+          "SID",
+          "SID",
           "JEPANG",
           "JEPANG",
           "B. INDO",
           "B. INDO",
-          "B.INGGRIS",
-          "B.INGGRIS",
-          "B.INGGRIS"
+          "SIG",
+          "SIG",
+          "SIG"
         ]
       },
       {
@@ -1640,8 +1640,8 @@
           "EKO",
           "B. INDO",
           "B. INDO",
-          "FISIKA/PKWU",
-          "FISIKA/PKWU",
+          "PKWU",
+          "PKWU",
           "MTK",
           "PAI",
           "PAI",
@@ -1653,10 +1653,10 @@
         "lessons": [
           "SEJARAH",
           "SEJARAH",
-          "SOSIO/ANTRO",
-          "SOSIO/ANTRO",
-          "B. INDO",
-          "B. INDO",
+          "ANTRO",
+          "ANTRO",
+          "SID",
+          "SID",
           "PKN",
           "PKN",
           "SENI",
@@ -1666,8 +1666,8 @@
       {
         "day": 4,
         "lessons": [
-          "SOSIO/ANTRO",
-          "SOSIO/ANTRO",
+          "ANTRO",
+          "ANTRO",
           "SUNDA",
           "SUNDA",
           "EKO",
@@ -1688,7 +1688,7 @@
           "B.INGGRIS",
           "B.INGGRIS",
           "BK",
-          "B.INGGRIS"
+          "SIG"
         ]
       }
     ]
