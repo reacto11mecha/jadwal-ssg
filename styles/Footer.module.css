@@ -33,6 +33,7 @@
 }
 
 .themeToggler {
+  cursor: pointer;
   margin-top: 0px;
   margin-left: 5px;
 }
