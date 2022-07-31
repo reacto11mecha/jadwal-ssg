@@ -1,32 +1,46 @@
+import { z } from "zod";
+
+const dayValidation = z.number().positive().min(1).max(7);
+
 // jadwal.json file typing start //
-export interface ISchedule {
-  day: 1 | 2 | 3 | 4 | 5 | 6 | 7;
-  lessons: string[];
-}
+export const JadwalJson = z
+  .array(
+    z.object({
+      className: z.string(),
+      schedule: z.array(
+        z.object({
+          day: dayValidation,
+          lessons: z.array(z.string()).nonempty(),
+        })
+      ),
+    })
+  )
+  .nonempty();
 
-export interface IIndividualClass {
-  className: string;
-  schedule: ISchedule[];
-}
+export type allClassSchedule = z.infer<typeof JadwalJson>;
 
-// Typing yang sebenarnya
-export type allClassSchedule = IIndividualClass[];
+export type IIndividualClass = allClassSchedule[number];
+
+export type ISchedule = IIndividualClass["schedule"][number];
 // jadwal.json file typing end //
 
 // waktu.json file typing start //
-export type TAlloc = {
-  JAM: number;
-  WAKTU: string[];
-};
+export const WaktuJson = z.object({
+  TimeAllocation: z
+    .array(
+      z.object({
+        alloc: z.array(
+          z.object({
+            JAM: z.number(),
+            WAKTU: z.array(z.string()),
+          })
+        ),
+        currentDay: dayValidation,
+      })
+    )
+    .nonempty(),
+  TZ: z.string(),
+});
 
-export interface ITimeAllocation {
-  alloc: TAlloc[];
-  currentDay: ISchedule["day"];
-}
-
-// Typing yang sebenarnya
-export type ITimeInfo = {
-  TimeAllocation: ITimeAllocation[];
-  TZ: string;
-};
+export type ITimeInfo = z.infer<typeof WaktuJson>;
 // waktu.json file typing end //

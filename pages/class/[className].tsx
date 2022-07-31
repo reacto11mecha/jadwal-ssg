@@ -8,6 +8,7 @@ import styles from "@/styles/ClassSSG.module.css";
 import { ScheduleCard } from "@/components/ScheduleCard";
 import { Footer } from "@/components/Footer";
 
+import { JadwalJson, WaktuJson } from "@/types/jadwal";
 import type {
   allClassSchedule,
   IIndividualClass,
@@ -18,7 +19,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const jadwalPath = path.join(path.resolve(), "data", "jadwal.json");
   const jadwalString = fs.readFileSync(jadwalPath, "utf8");
 
-  const jadwal: allClassSchedule = JSON.parse(jadwalString);
+  const jadwal = await JadwalJson.parseAsync(JSON.parse(jadwalString));
 
   return {
     paths: jadwal.map((kelas) => ({ params: { className: kelas.className } })),
@@ -35,12 +36,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const waktuPath = path.join(dataPath, "waktu.json");
   const waktuString = fs.readFileSync(waktuPath, "utf8");
 
-  const jadwal = JSON.parse(jadwalString) as allClassSchedule;
-  const selectedClass = (jadwal as allClassSchedule).find(
+  const jadwal = await JadwalJson.parseAsync(JSON.parse(jadwalString));
+  const selectedClass = jadwal.find(
     (kelas) => kelas.className === params!.className!
-  )! as IIndividualClass;
+  )!;
 
-  const waktu = JSON.parse(waktuString) as ITimeInfo;
+  const waktu = await WaktuJson.parseAsync(JSON.parse(waktuString));
 
   return {
     props: {

@@ -7,13 +7,13 @@ import fs from "fs";
 import { Footer } from "@/components/Footer";
 import styles from "@/styles/Home.module.css";
 
-import type { allClassSchedule } from "@/types/jadwal";
+import { type allClassSchedule, JadwalJson } from "@/types/jadwal";
 
 export const getStaticProps: GetStaticProps = async () => {
   const jadwalPath = path.join(path.resolve(), "data", "jadwal.json");
   const jadwalString = fs.readFileSync(jadwalPath, "utf8");
 
-  const jadwal: allClassSchedule = JSON.parse(jadwalString);
+  const jadwal = await JadwalJson.parseAsync(JSON.parse(jadwalString));
 
   return {
     props: {
