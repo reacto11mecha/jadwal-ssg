@@ -35,7 +35,7 @@ pnpm install
 
 ### Mengubah Jadwal dan Waktu
 
-Informasi statis yang ada di website ini terdapat pada file [`data/jadwal.json`](data/jadwal.json) dan [`data/waktu.json`](data/waktu.json). Ubah kedua file tersebut sesuai apa yang di inginkan. Untuk masalah struktur, cek typing yang sesuai pada file [`types/jadwal.json`](types/jadwal.json).
+Informasi statis yang ada di website ini terdapat pada file [`data/jadwal.json`](data/jadwal.json) dan [`data/waktu.json`](data/waktu.json). Ubah kedua file tersebut sesuai apa yang di inginkan. Untuk masalah struktur, cek typing yang sesuai pada file [`types/jadwal.ts`](types/jadwal.ts).
 
 > Sumber data statis yang ada di project ini berasal dari [`xlsx-schedule-generator`](https://github.com/reacto11mecha/xlsx-schedule-generator) yang menghasilkan jadwal pelajaran dari sebuah file xlsx excel. Cek repositori tersebut untuk lebih lengkapnya.
 
