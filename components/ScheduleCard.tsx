@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { getDay } from "@/utils/getDay";
 
 import styles from "@/styles/ClassSSG.module.css";
@@ -14,6 +14,7 @@ export function ScheduleCard({
   waktu: ITimeInfo;
 }) {
   const [tanggal, setTanggal] = useState("");
+  const cardRef = useRef<HTMLElement>(null!);
 
   useEffect(() => {
     const setTime = async () => {
@@ -34,10 +35,46 @@ export function ScheduleCard({
         .plus({
           days: perDay.day > 1 && perDay.day <= 7 ? perDay.day - 1 : 0,
         })
-        .setLocale("id-ID")
-        .toLocaleString(DateTime.DATE_FULL);
+        .setLocale("id-ID");
 
-      setTanggal(time);
+      setTanggal(time.toLocaleString(DateTime.DATE_FULL));
+
+      if (isNextWeek) {
+        const nextWeekMondayTime = DateTime.now()
+          .setZone(waktu.TZ)
+          .plus({ weeks: 1 })
+          .startOf("week");
+
+        if (time <= nextWeekMondayTime) {
+          cardRef.current.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+
+        return;
+      }
+
+      const isTheSameDay =
+        time.startOf("day") <= DateTime.now().setZone(waktu.TZ);
+      const currentDayTimeAllocation = waktu.TimeAllocation.find(
+        ({ currentDay }) => currentDay === perDay.day
+      )!.alloc;
+
+      const lastIndexTime = currentDayTimeAllocation[
+        currentDayTimeAllocation.length - 1
+      ]!.WAKTU![1].replace(".", ":");
+      const endOfDayTime = time.set({
+        hour: parseInt(lastIndexTime.split(":")[0]),
+        minute: parseInt(lastIndexTime.split(":")[1]),
+      });
+
+      const isEndOfDay = endOfDayTime <= DateTime.now().setZone(waktu.TZ);
+
+      if (isTheSameDay && !isEndOfDay) {
+        cardRef.current.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
     };
 
     setTime();
@@ -47,7 +84,7 @@ export function ScheduleCard({
 
   return (
     <div>
-      <article className={`card ${styles.card}`}>
+      <article className={`card ${styles.card}`} ref={cardRef}>
         <footer>
           <div>
             <h3>
