@@ -32,7 +32,7 @@ const Home = ({
         name="description"
         content="Daftar jadwal pelajaran SMAN 12 Bekasi"
       />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.png" />
     </Head>
     <header className={styles.header}>
       <h1>Daftar Jadwal Pelajaran</h1>
