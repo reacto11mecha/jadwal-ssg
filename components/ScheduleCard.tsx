@@ -78,8 +78,8 @@ export function ScheduleCard({
         const nextDayCard = cardRef.current.parentNode?.nextSibling?.firstChild;
 
         if (nextDayCard) {
-          nextDayCard.scrollIntoView({
-            behaviour: "smooth",
+          (nextDayCard as HTMLElement).scrollIntoView({
+            behavior: "smooth",
           });
         }
       }
