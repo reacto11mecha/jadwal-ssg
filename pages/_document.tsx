@@ -22,8 +22,11 @@ class MyDocument extends Document<Props> {
 
   render() {
     return (
-      <Html>
-        <Head />
+      <Html lang="id">
+        <Head>
+          <link rel="icon" href="/favicon.ico" />
+          <link rel="manifest" href="/manifest.json" />
+        </Head>
         <body>
           <script
             dangerouslySetInnerHTML={{

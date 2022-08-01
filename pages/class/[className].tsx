@@ -71,7 +71,6 @@ const Jadwal = ({
               " "
             )}`}
           />
-          <link rel="icon" href="/favicon.png" />
         </Head>
         <div>
           <h1 className={styles.center}>
