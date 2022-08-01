@@ -74,6 +74,14 @@ export function ScheduleCard({
         cardRef.current.scrollIntoView({
           behavior: "smooth",
         });
+      } else if (isEndOfDay) {
+        const nextDayCard = cardRef.current.parentNode?.nextSibling?.firstChild;
+
+        if (nextDayCard) {
+          nextDayCard.scrollIntoView({
+            behaviour: "smooth",
+          });
+        }
       }
     };
 
