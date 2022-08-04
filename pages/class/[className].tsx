@@ -15,7 +15,7 @@ import type {
   ITimeInfo,
 } from "@/types/jadwal";
 
-const Footer = dynamic(
+const Footer = dynamic<{}>(
   () => import("@/components/Footer").then((mod) => mod.Footer),
   { ssr: false }
 );

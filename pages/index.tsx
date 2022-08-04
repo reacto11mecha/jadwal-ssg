@@ -9,7 +9,7 @@ import styles from "@/styles/Home.module.css";
 
 import { type allClassSchedule, JadwalJson } from "@/types/jadwal";
 
-const Footer = dynamic(
+const Footer = dynamic<{}>(
   () => import("@/components/Footer").then((mod) => mod.Footer),
   { ssr: false }
 );
