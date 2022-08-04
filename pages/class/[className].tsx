@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import path from "path";
 import fs from "fs";
@@ -6,7 +7,6 @@ import fs from "fs";
 import Head from "next/head";
 import styles from "@/styles/ClassSSG.module.css";
 import { ScheduleCard } from "@/components/ScheduleCard";
-import { Footer } from "@/components/Footer";
 
 import { JadwalJson, WaktuJson } from "@/types/jadwal";
 import type {
@@ -14,6 +14,11 @@ import type {
   IIndividualClass,
   ITimeInfo,
 } from "@/types/jadwal";
+
+const Footer = dynamic(
+  () => import("@/components/Footer").then((mod) => mod.Footer),
+  { ssr: false }
+);
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const jadwalPath = path.join(path.resolve(), "data", "jadwal.json");

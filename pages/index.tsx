@@ -1,13 +1,18 @@
 import type { GetStaticProps, InferGetStaticPropsType } from "next";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import Link from "next/link";
 import path from "path";
 import fs from "fs";
 
-import { Footer } from "@/components/Footer";
 import styles from "@/styles/Home.module.css";
 
 import { type allClassSchedule, JadwalJson } from "@/types/jadwal";
+
+const Footer = dynamic(
+  () => import("@/components/Footer").then((mod) => mod.Footer),
+  { ssr: false }
+);
 
 export const getStaticProps: GetStaticProps = async () => {
   const jadwalPath = path.join(path.resolve(), "data", "jadwal.json");
