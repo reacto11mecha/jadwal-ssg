@@ -9,13 +9,14 @@ import styles from "@/styles/ClassSSG.module.css";
 import { ScheduleCard } from "@/components/ScheduleCard";
 
 import { JadwalJson, WaktuJson } from "@/types/jadwal";
+import type { IFooter } from "@/components/Footer";
 import type {
   allClassSchedule,
   IIndividualClass,
   ITimeInfo,
 } from "@/types/jadwal";
 
-const Footer = dynamic<{}>(
+const Footer = dynamic<IFooter>(
   () => import("@/components/Footer").then((mod) => mod.Footer),
   { ssr: false }
 );
@@ -50,17 +51,20 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      jadwal: selectedClass,
+      currentClassSchedule: selectedClass,
+      allClass: jadwal.map((individualClass) => individualClass.className),
       waktu,
     },
   };
 };
 
 const Jadwal = ({
-  jadwal,
+  currentClassSchedule,
+  allClass,
   waktu,
 }: InferGetStaticPropsType<typeof getStaticProps> & {
-  jadwal: IIndividualClass;
+  currentClassSchedule: IIndividualClass;
+  allClass: string[];
   waktu: ITimeInfo;
 }) => {
   return (
@@ -68,10 +72,10 @@ const Jadwal = ({
       <div className={`flex one ${styles.Jadwal}`}>
         <Head>
           {/* prettier-ignore */}
-          <title>{`Jadwal Pelajaran Kelas ${jadwal.className.replace("-", " ")}`}</title>
+          <title>{`Jadwal Pelajaran Kelas ${currentClassSchedule.className.replace("-", " ")}`}</title>
           <meta
             name="description"
-            content={`Info lengkap tentang jadwal pelajaran kelas ${jadwal.className.replace(
+            content={`Info lengkap tentang jadwal pelajaran kelas ${currentClassSchedule.className.replace(
               "-",
               " "
             )}`}
@@ -79,21 +83,26 @@ const Jadwal = ({
         </Head>
         <div>
           <h1 className={styles.center}>
-            Jadwal Pelajaran Kelas {jadwal.className.replace("-", " ")}
+            Jadwal Pelajaran Kelas{" "}
+            {currentClassSchedule.className.replace("-", " ")}
           </h1>
         </div>
         <div className={`flex one two-1000 ${styles.mainContent}`}>
-          {jadwal.schedule.map((perDay) => (
+          {currentClassSchedule.schedule.map((perDay) => (
             <ScheduleCard
               key={perDay.day}
-              jadwal={jadwal}
               perDay={perDay}
               waktu={waktu}
+              jadwal={currentClassSchedule}
             />
           ))}
         </div>
       </div>
-      <Footer />
+      <Footer
+        showDropdown={true}
+        allClass={allClass}
+        currentClassSchedule={currentClassSchedule}
+      />
     </>
   );
 };
