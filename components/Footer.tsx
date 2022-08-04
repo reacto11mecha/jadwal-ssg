@@ -9,7 +9,7 @@ import type { IIndividualClass } from "@/types/jadwal";
 export interface IFooter {
   showDropdown?: boolean;
   allClass?: string[];
-  currentClassSchedule: IIndividualClass;
+  currentClassSchedule?: IIndividualClass;
 }
 
 const GithubAndToggler = ({
@@ -83,7 +83,10 @@ export const Footer = (props: IFooter) => {
             currentClassSchedule={props.currentClassSchedule}
           />
         )}
-        <GithubAndToggler isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
+        <GithubAndToggler
+          isDarkTheme={isDarkTheme as boolean}
+          toggleTheme={toggleTheme}
+        />
       </div>
     </footer>
   );
