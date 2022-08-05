@@ -53,21 +53,18 @@ const SelectDropdown = ({
   const router = useRouter();
 
   return (
-    <article className={`card ${styles.CardStyle} ${styles.classSelectorCard}`}>
-      <header>
-        <select
-          className={styles.classSelector}
-          value={currentClassSchedule.className}
-          onChange={(e) => {
-            router.push(e.target.value);
-          }}
-        >
-          {allClass.map((IndividualClass) => (
-            <option key={IndividualClass}>{IndividualClass}</option>
-          ))}
-        </select>
-      </header>
-    </article>
+    <select
+      className={`card ${styles.CardStyle} ${styles.classSelector}`}
+      onChange={(e) => {
+        router.push(e.target.value);
+        (e.target as HTMLElement).blur();
+      }}
+      value={currentClassSchedule.className}
+    >
+      {allClass.map((IndividualClass) => (
+        <option key={IndividualClass}>{IndividualClass}</option>
+      ))}
+    </select>
   );
 };
 
