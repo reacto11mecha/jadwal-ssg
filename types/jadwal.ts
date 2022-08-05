@@ -31,7 +31,8 @@ export const WaktuJson = z.object({
       z.object({
         alloc: z.array(
           z.object({
-            JAM: z.number(),
+            JAM: z.number().optional(),
+            isBreak: z.boolean().optional(),
             WAKTU: z.array(z.string()),
           })
         ),
@@ -43,4 +44,6 @@ export const WaktuJson = z.object({
 });
 
 export type ITimeInfo = z.infer<typeof WaktuJson>;
+
+export type ITimeAllocation = ITimeInfo["TimeAllocation"][number];
 // waktu.json file typing end //

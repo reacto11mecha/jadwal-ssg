@@ -3,16 +3,22 @@ import { useRouter } from "next/router";
 import { getDay } from "@/utils/getDay";
 
 import styles from "@/styles/ClassSSG.module.css";
-import type { ISchedule, IIndividualClass, ITimeInfo } from "@/types/jadwal";
+import type {
+  ISchedule,
+  IIndividualClass,
+  ITimeAllocation,
+} from "@/types/jadwal";
 
 export function ScheduleCard({
   perDay,
   jadwal,
   waktu,
+  Timezone,
 }: {
   perDay: ISchedule;
   jadwal: IIndividualClass;
-  waktu: ITimeInfo;
+  waktu: ITimeAllocation;
+  Timezone: string;
 }) {
   const router = useRouter();
 
@@ -23,9 +29,7 @@ export function ScheduleCard({
     const setTime = async () => {
       const DateTime = (await import("luxon")).DateTime;
 
-      const currentDayTimeAllocation = waktu.TimeAllocation.find(
-        ({ currentDay }) => currentDay === perDay.day
-      )!.alloc;
+      const currentDayTimeAllocation = waktu.alloc;
 
       const lastIndexTime = currentDayTimeAllocation[
         currentDayTimeAllocation.length - 1
@@ -33,16 +37,16 @@ export function ScheduleCard({
 
       const isNextWeek =
         DateTime.now()
-          .setZone(waktu.TZ)
+          .setZone(Timezone)
           .startOf("week")
           .plus({ days: jadwal.schedule.length - 1 })
           .set({
             hour: parseInt(lastIndexTime.split(":")[0]),
             minute: parseInt(lastIndexTime.split(":")[1]),
-          }) <= DateTime.now().setZone(waktu.TZ);
+          }) <= DateTime.now().setZone(Timezone);
 
       const time = DateTime.now()
-        .setZone(waktu.TZ)
+        .setZone(Timezone)
         .plus({ weeks: isNextWeek ? 1 : 0 })
         .startOf("week")
         .plus({
@@ -54,7 +58,7 @@ export function ScheduleCard({
 
       if (isNextWeek) {
         const nextWeekMondayTime = DateTime.now()
-          .setZone(waktu.TZ)
+          .setZone(Timezone)
           .plus({ weeks: 1 })
           .startOf("week");
 
@@ -68,14 +72,14 @@ export function ScheduleCard({
       }
 
       const isTheSameDay =
-        time.startOf("day") <= DateTime.now().setZone(waktu.TZ);
+        time.startOf("day") <= DateTime.now().setZone(Timezone);
 
       const endOfDayTime = time.set({
         hour: parseInt(lastIndexTime.split(":")[0]),
         minute: parseInt(lastIndexTime.split(":")[1]),
       });
 
-      const isEndOfDay = endOfDayTime <= DateTime.now().setZone(waktu.TZ);
+      const isEndOfDay = endOfDayTime <= DateTime.now().setZone(Timezone);
 
       if (isTheSameDay && !isEndOfDay) {
         cardRef.current.scrollIntoView({
@@ -122,17 +126,19 @@ export function ScheduleCard({
                 </tr>
               </thead>
               <tbody>
-                {perDay.lessons.map((lesson, idx) => (
+                {waktu.alloc.map((allocation, idx) => (
                   <tr key={idx}>
-                    <td>{idx + 1}</td>
-                    <td>{lesson}</td>
-                    <td>
-                      {waktu.TimeAllocation.find(
-                        (time) => time.currentDay === perDay.day
-                      )!
-                        .alloc.find((allocation) => allocation.JAM === idx + 1)!
-                        .WAKTU.join(" - ")}
-                    </td>
+                    {!allocation.isBreak ? (
+                      <>
+                        <td>{allocation.JAM}</td>
+                        <td>{perDay.lessons[allocation.JAM! - 1] ?? ""}</td>
+                      </>
+                    ) : (
+                      <td colSpan={2} style={{ textAlign: "center" }}>
+                        ISTIRAHAT
+                      </td>
+                    )}
+                    <td>{allocation.WAKTU.join(" - ")}</td>
                   </tr>
                 ))}
               </tbody>

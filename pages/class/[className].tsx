@@ -92,8 +92,13 @@ const Jadwal = ({
             <ScheduleCard
               key={perDay.day}
               perDay={perDay}
-              waktu={waktu}
+              waktu={
+                waktu.TimeAllocation.find(
+                  (time) => time.currentDay === perDay.day
+                )!
+              }
               jadwal={currentClassSchedule}
+              Timezone={waktu.TZ}
             />
           ))}
         </div>
