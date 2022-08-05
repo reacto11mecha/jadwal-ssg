@@ -24,7 +24,7 @@ class MyDocument extends Document<Props> {
     return (
       <Html lang="id">
         <Head>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon.png" />
           <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>

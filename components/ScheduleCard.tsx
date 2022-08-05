@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 import { getDay } from "@/utils/getDay";
 
 import styles from "@/styles/ClassSSG.module.css";
@@ -13,6 +14,8 @@ export function ScheduleCard({
   jadwal: IIndividualClass;
   waktu: ITimeInfo;
 }) {
+  const router = useRouter();
+
   const [tanggal, setTanggal] = useState("");
   const cardRef = useRef<HTMLElement>(null!);
 
@@ -20,13 +23,23 @@ export function ScheduleCard({
     const setTime = async () => {
       const DateTime = (await import("luxon")).DateTime;
 
+      const currentDayTimeAllocation = waktu.TimeAllocation.find(
+        ({ currentDay }) => currentDay === perDay.day
+      )!.alloc;
+
+      const lastIndexTime = currentDayTimeAllocation[
+        currentDayTimeAllocation.length - 1
+      ]!.WAKTU![1].replace(".", ":");
+
       const isNextWeek =
         DateTime.now()
           .setZone(waktu.TZ)
           .startOf("week")
-          .plus({ days: jadwal.schedule.length })
-          .startOf("day")
-          .toMillis() <= DateTime.now().setZone(waktu.TZ).toMillis();
+          .plus({ days: jadwal.schedule.length - 1 })
+          .set({
+            hour: parseInt(lastIndexTime.split(":")[0]),
+            minute: parseInt(lastIndexTime.split(":")[1]),
+          }) <= DateTime.now().setZone(waktu.TZ);
 
       const time = DateTime.now()
         .setZone(waktu.TZ)
@@ -56,13 +69,7 @@ export function ScheduleCard({
 
       const isTheSameDay =
         time.startOf("day") <= DateTime.now().setZone(waktu.TZ);
-      const currentDayTimeAllocation = waktu.TimeAllocation.find(
-        ({ currentDay }) => currentDay === perDay.day
-      )!.alloc;
 
-      const lastIndexTime = currentDayTimeAllocation[
-        currentDayTimeAllocation.length - 1
-      ]!.WAKTU![1].replace(".", ":");
       const endOfDayTime = time.set({
         hour: parseInt(lastIndexTime.split(":")[0]),
         minute: parseInt(lastIndexTime.split(":")[1]),
@@ -86,6 +93,12 @@ export function ScheduleCard({
     };
 
     setTime();
+
+    router.events.on("routeChangeComplete", setTime);
+
+    return () => {
+      router.events.off("routeChangeComplete", setTime);
+    };
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
