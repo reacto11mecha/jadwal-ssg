@@ -10,21 +10,23 @@ Anda butuh
 
 ## Pemakaian
 
-### Cloning Dari Github
+### Menggunakan Template Repositori
 
-Jalankan perintah ini Command Line.
+Pertama gunakan repo template ini untuk membuat repo baru, bisa menggunakan tombol [`Use this template`](https://github.com/reacto11mecha/jadwal-ssg/generate). Di step ini tampilannya mirip membuat repositori baru di github seperti biasa.
+
+### Mengubah Jadwal dan Waktu
+
+Untuk mengubah jadwal, terlebih dahulu clone repositori template yang sudah dibuat sebelumnya. Clone sesuai apa yang sudah kamu isikan pada saat mengenerate repositori. Contoh perintah:
 
 ```sh
 # HTTPS
-git clone https://github.com/reacto11mecha/jadwal-ssg.git
+git clone https://github.com/{username}/{nama_repositori}.git
 
 # SSH
-git clone git@github.com:reacto11mecha/jadwal-ssg.git
+git clone git@github.com:{username}/{nama_repositori}.git
 ```
 
-### Menginstall package
-
-Anda ke root directory project dan menginstall package yang diperlukan.
+Setelah mengkloning repositori, baiknya menginstal package-package yang diperlukan agar mudah dalam melakukan validasi data. Untuk itu, jalankan perintah berikut.
 
 ```sh
 npm install
@@ -32,8 +34,6 @@ npm install
 # atau menggunakan pnpm
 pnpm install
 ```
-
-### Mengubah Jadwal dan Waktu
 
 Informasi statis yang ada di website ini terdapat pada file [`data/jadwal.json`](data/jadwal.json) dan [`data/waktu.json`](data/waktu.json). Ubah kedua file tersebut sesuai apa yang di inginkan. Untuk masalah struktur, cek typing yang sesuai pada file [`types/jadwal.ts`](types/jadwal.ts).
 
@@ -59,6 +59,10 @@ npm start
 pnpm start
 ```
 
+## Local Development
+
+Anda bisa melakukan perubahan secara local dan mengubah tampilan atau apapun sesuka hati. Cara tersebut sudah dijelaskan pada poin [`pemaikaian`](#pemakian).
+
 ## Lisensi
 
-Project ini bernaung di bawah lisensi [GPL-3.0 License](LICENSE)
+Project ini bernaung di bawah lisensi [GPL-3.0 License](LICENSE).
