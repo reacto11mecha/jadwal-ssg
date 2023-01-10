@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import { getDay } from "@/utils/getDay";
+import { lato } from "@/utils/font";
 
 import styles from "@/styles/ClassSSG.module.css";
 import type {
@@ -112,7 +113,7 @@ export function ScheduleCard({
       <article className={`card ${styles.card}`} ref={cardRef}>
         <footer>
           <div>
-            <h3>
+            <h3 className={lato.className}>
               {getDay(perDay.day)}
               {tanggal.length > 1 ? `, ${tanggal}` : ""}
             </h3>

@@ -2,8 +2,6 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 
 import "picnic";
-import "@fontsource/lato/700.css";
-import "@fontsource/poppins/400.css";
 
 import "@/styles/globals.css";
 

@@ -7,6 +7,7 @@ import Document, {
 } from "next/document";
 
 import themeInitializerScript from "@/utils/theme";
+import { poppins } from "@/utils/font";
 
 interface Props {
   themeScript: string;
@@ -27,7 +28,7 @@ class MyDocument extends Document<Props> {
           <link rel="icon" href="/favicon.png" />
           <link rel="manifest" href="/manifest.json" />
         </Head>
-        <body>
+        <body className={poppins.className}>
           <script
             dangerouslySetInnerHTML={{
               __html: this.props.themeScript,

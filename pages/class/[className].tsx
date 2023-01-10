@@ -5,16 +5,13 @@ import path from "path";
 import fs from "fs";
 
 import Head from "next/head";
+import { lato } from "@/utils/font";
 import styles from "@/styles/ClassSSG.module.css";
 import { ScheduleCard } from "@/components/ScheduleCard";
 
 import { JadwalJson, WaktuJson } from "@/types/jadwal";
 import type { IFooter } from "@/components/Footer";
-import type {
-  allClassSchedule,
-  IIndividualClass,
-  ITimeInfo,
-} from "@/types/jadwal";
+import type { IIndividualClass, ITimeInfo } from "@/types/jadwal";
 
 const Footer = dynamic<IFooter>(
   () => import("@/components/Footer").then((mod) => mod.Footer),
@@ -82,7 +79,7 @@ const Jadwal = ({
           />
         </Head>
         <div>
-          <h1 className={styles.center}>
+          <h1 className={`${styles.center} ${lato.className}`}>
             Jadwal Pelajaran Kelas{" "}
             {currentClassSchedule.className.replace("-", " ")}
           </h1>

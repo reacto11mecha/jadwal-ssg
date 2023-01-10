@@ -5,10 +5,11 @@ import Link from "next/link";
 import path from "path";
 import fs from "fs";
 
+import { lato } from "@/utils/font";
 import styles from "@/styles/Home.module.css";
 
 import type { IFooter } from "@/components/Footer";
-import { type allClassSchedule, JadwalJson } from "@/types/jadwal";
+import { JadwalJson } from "@/types/jadwal";
 
 const Footer = dynamic<IFooter>(
   () => import("@/components/Footer").then((mod) => mod.Footer),
@@ -40,9 +41,9 @@ const Home = ({
       />
     </Head>
     <header className={styles.header}>
-      <h1>Daftar Jadwal Pelajaran</h1>
-      <h2>Tahun Ajaran 2022/2023</h2>
-      <h3>SMA Negeri 12 Kota Bekasi</h3>
+      <h1 className={lato.className}>Daftar Jadwal Pelajaran</h1>
+      <h2 className={lato.className}>Tahun Ajaran 2022/2023</h2>
+      <h3 className={lato.className}>SMA Negeri 12 Kota Bekasi</h3>
     </header>
     <hr className={styles.horizontalRuler} />
     <main className={styles.mainContent}>
@@ -52,7 +53,7 @@ const Home = ({
         {classLists.map((className: string) => (
           <li key={className} className={styles.listItem}>
             <Link href={`/class/${className}`}>
-              <a>Jadwal Kelas {className.replace("-", " ")}</a>
+              Jadwal Kelas {className.replace("-", " ")}
             </Link>
           </li>
         ))}

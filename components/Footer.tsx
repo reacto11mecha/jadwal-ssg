@@ -26,6 +26,7 @@ const GithubAndToggler = ({
           href="https://github.com/reacto11mecha/jadwal-ssg"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Halaman repositori github kode website ini"
         >
           <BsGithub />
         </a>
@@ -37,6 +38,9 @@ const GithubAndToggler = ({
         toggleTheme();
         (e.target as HTMLElement).blur();
       }}
+      aria-label={`Ubah tema halaman menjadi ${
+        isDarkTheme ? "cerah" : "gelap"
+      }`}
     >
       <header>{isDarkTheme ? <BsFillMoonFill /> : <BsSun />}</header>
     </button>
