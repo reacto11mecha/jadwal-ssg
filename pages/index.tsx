@@ -40,10 +40,10 @@ const Home = ({
         content="Daftar jadwal pelajaran SMAN 12 Bekasi"
       />
     </Head>
-    <header className={styles.header}>
-      <h1 className={lato.className}>Daftar Jadwal Pelajaran</h1>
-      <h2 className={lato.className}>Tahun Ajaran 2022/2023</h2>
-      <h3 className={lato.className}>SMA Negeri 12 Kota Bekasi</h3>
+    <header className={`${styles.header} ${lato.className}`}>
+      <h1>Daftar Jadwal Pelajaran</h1>
+      <h2>Tahun Ajaran 2022/2023</h2>
+      <h3>SMA Negeri 12 Kota Bekasi</h3>
     </header>
     <hr className={styles.horizontalRuler} />
     <main className={styles.mainContent}>
