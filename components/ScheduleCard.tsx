@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { getDay } from "@/utils/getDay";
 import { lato } from "@/utils/font";
 
+import { useDarkMode } from "@/context/darkMode";
 import styles from "@/styles/ClassSSG.module.css";
 import type {
   ISchedule,
@@ -21,6 +22,7 @@ export function ScheduleCard({
   waktu: ITimeAllocation;
   Timezone: string;
 }) {
+  const { isDarkTheme } = useDarkMode();
   const router = useRouter();
 
   const [tanggal, setTanggal] = useState("");
@@ -128,11 +130,30 @@ export function ScheduleCard({
               </thead>
               <tbody>
                 {waktu.alloc.map((allocation, idx) => (
-                  <tr key={idx}>
+                  <tr
+                    key={idx}
+                    style={
+                      allocation.isBreak
+                        ? {
+                            backgroundColor: isDarkTheme
+                              ? "#1d3557"
+                              : "#a8dadc",
+                          }
+                        : undefined
+                    }
+                  >
                     {!allocation.isBreak ? (
                       <>
                         <td>{allocation.JAM}</td>
-                        <td>{perDay.lessons[allocation.JAM! - 1] ?? ""}</td>
+                        <td>
+                          {perDay.lessons[allocation.JAM! - 1] ?? ""}
+                          {perDay.lessons[allocation.JAM! - 1] === "SUNDA" ? (
+                            <>
+                              {"  "}
+                              <small>(Jangan Lupa Totopong!)</small>{" "}
+                            </>
+                          ) : null}
+                        </td>
                       </>
                     ) : (
                       <td colSpan={2} style={{ textAlign: "center" }}>
