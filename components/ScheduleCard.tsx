@@ -150,7 +150,9 @@ export function ScheduleCard({
                           {perDay.lessons[allocation.JAM! - 1] === "SUNDA" ? (
                             <>
                               {"  "}
-                              <small>(Jangan Lupa Totopong!)</small>{" "}
+                              <small>
+                                (Jangan Lupa Totopong dan Kamus!)
+                              </small>{" "}
                             </>
                           ) : null}
                         </td>
