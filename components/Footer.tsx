@@ -1,4 +1,7 @@
 import { BsGithub, BsFillMoonFill, BsSun } from "react-icons/bs";
+import { ImHome } from "react-icons/im";
+import Router from "next/router";
+
 import { useDarkMode } from "@/context/darkMode";
 import { useRouter } from "next/router";
 
@@ -11,6 +14,23 @@ export interface IFooter {
   allClass?: string[];
   currentClassSchedule?: IIndividualClass;
 }
+
+const GoHome = () => (
+  <article className={`card ${styles.CardStyle}`}>
+    <header>
+      <a
+        onClick={() => {
+          localStorage.removeItem("favourite-class");
+          Router.replace("/");
+        }}
+        className={styles.goHomeButton}
+        aria-label="Halaman repositori github kode website ini"
+      >
+        <ImHome />
+      </a>
+    </header>
+  </article>
+);
 
 const GithubAndToggler = ({
   isDarkTheme,
@@ -79,10 +99,13 @@ export const Footer = (props: IFooter) => {
     <footer className={styles.Footer}>
       <div className={styles.container}>
         {props.showDropdown && props.allClass && props.currentClassSchedule && (
-          <SelectDropdown
-            allClass={props.allClass}
-            currentClassSchedule={props.currentClassSchedule}
-          />
+          <>
+            <SelectDropdown
+              allClass={props.allClass}
+              currentClassSchedule={props.currentClassSchedule}
+            />
+            <GoHome />
+          </>
         )}
         <GithubAndToggler
           isDarkTheme={isDarkTheme as boolean}

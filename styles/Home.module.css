@@ -29,3 +29,25 @@
 .mainContent {
   padding-bottom: 2em;
 }
+
+.favouriteClass {
+  display: inline;
+  margin: 0 auto;
+  padding: 12px 0;
+  padding-left: 1em;
+}
+
+.currentClass {
+  width: fit-content;
+  display: inherit;
+}
+
+.favouriteClassPicker {
+  background: none;
+  display: inherit;
+  width: auto;
+  aspect-ratio: 2.7;
+  margin-left: 0.75rem;
+  border-color: var(--color-border-card);
+  background-color: var(--color-background-secondary);
+}

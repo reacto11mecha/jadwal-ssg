@@ -16,6 +16,7 @@
   justify-content: center;
   height: 100%;
   width: 100%;
+  gap: 5px;
 }
 
 .CardStyle {
@@ -36,7 +37,6 @@
 .themeToggler {
   cursor: pointer;
   margin-top: 0px;
-  margin-left: 5px;
 }
 
 .themeToggler:focus,
@@ -47,8 +47,11 @@
 
 .classSelector {
   color: var(--color-text);
-  margin-right: 5px;
   width: auto;
   padding-left: 4px;
   padding-right: 1px;
+}
+
+.goHomeButton {
+  cursor: pointer;
 }
