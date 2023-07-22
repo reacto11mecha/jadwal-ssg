@@ -1,0 +1,31 @@
+---
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Halaman tidak ditemukan" description="Not found">
+  <main
+    class="h-screen flex flex-col gap-5 p-5 sm:p-0 justify-center items-center"
+  >
+    <h1 class="font-poppins font-semibold text-3xl md:text-4xl lg:text-5xl">
+      Halaman tidak ditemukan!
+    </h1>
+
+    <p class="font-lato text-center text-xl md:text-2xl lg:text-3xl">
+      Ke halaman ini karena cek jadwal? Reset menggunakan tombol <button
+        class="border rounded p-2 hover:bg-slate-200">ini!</button
+      >
+    </p>
+    <p class="text-xl md:text-2xl lg:text-3xl">
+      Atau ke <a href="/" class="text-blue-500">halaman depan...</a>
+    </p>
+  </main>
+
+  <script>
+    const btn = document.querySelector("button")!;
+
+    btn.addEventListener("click", () => {
+      localStorage.removeItem("favorite-class");
+      document.location = "/skola/schedule";
+    });
+  </script>
+</Layout>
