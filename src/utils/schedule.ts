@@ -12,13 +12,20 @@ export const JadwalJson = z
       // Harus berbeda satu dengan lainnya.
       className: z.string(),
 
-      schedule: z.array(
+      schedules: z.array(
         z.object({
           day: dayValidation,
 
           // Array yang berisikan string jadwal
           // pelajaran siswa pada hari spesifik
-          lessons: z.array(z.string()).nonempty(),
+          lessons: z
+            .array(
+              z.object({
+                lesson: z.string(),
+                name: z.string().optional(),
+              })
+            )
+            .nonempty(),
         })
       ),
     })
@@ -29,7 +36,7 @@ export type allClassSchedule = z.infer<typeof JadwalJson>;
 
 export type IIndividualClass = allClassSchedule[number];
 
-export type ISchedule = IIndividualClass["schedule"][number];
+export type ISchedule = IIndividualClass["schedules"][number];
 // jadwal.json file typing end //
 
 // waktu.json file typing start //
@@ -62,3 +69,26 @@ export type ITimeInfo = z.infer<typeof WaktuJson>;
 
 export type ITimeAllocation = ITimeInfo["TimeAllocation"][number];
 // waktu.json file typing end //
+
+export const getDay = (day: number) => {
+  switch (day) {
+    case 1:
+      return "SENIN";
+    case 2:
+      return "SELASA";
+    case 3:
+      return "RABU";
+    case 4:
+      return "KAMIS";
+    case 5:
+      return "JUM'AT";
+      break;
+    case 7:
+      return "SABTU";
+    case 8:
+      return "MINGGU";
+
+    default:
+      return "N/A";
+  }
+};

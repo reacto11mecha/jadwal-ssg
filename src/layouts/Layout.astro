@@ -1,0 +1,42 @@
+---
+import "@fontsource/lato";
+import "@fontsource/poppins";
+
+import { pwaInfo } from 'virtual:pwa-info';
+
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta name="description" content={description} />
+
+    <link rel="icon" href="/favicon.png" />
+
+    <title>{title}</title>
+
+    <script is:inline>
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+
+    <script src="/src/pwa.ts"></script>
+    { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
+  </head>
+  <body class="dark:bg-neutral-950 dark:text-white transition transition-all ease-linear">
+    <slot />
+  </body>
+</html>
