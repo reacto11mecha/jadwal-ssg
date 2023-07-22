@@ -2,6 +2,7 @@
 import "@fontsource/lato";
 import "@fontsource/poppins";
 
+import ReloadPrompt from '@components/ReloadPrompt.astro';
 import { pwaInfo } from 'virtual:pwa-info';
 
 export interface Props {
@@ -35,10 +36,10 @@ const { title, description } = Astro.props;
       }
     </script>
 
-    <script src="/src/pwa.ts"></script>
     { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
   </head>
   <body class="dark:bg-neutral-950 dark:text-white transition transition-all ease-linear">
     <slot />
+    <ReloadPrompt />
   </body>
 </html>
