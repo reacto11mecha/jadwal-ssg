@@ -1,0 +1,97 @@
+---
+import { JadwalJson, WaktuJson, getDay, type IIndividualClass } from "@utils/schedule";
+import Layout from "@layouts/Layout.astro";
+
+import { DynamicDate } from "@components/DynamicDate";
+import { ClassNavigator } from "@components/ClassNavigator";
+
+import rawScheduleData from "@data/jadwal.json";
+import rawTimeData from "@data/waktu.json";
+
+const { TimeAllocation: timeAlloc, TZ: Timezone } = await WaktuJson.parseAsync(rawTimeData);
+const scheduleDataSafe = await JadwalJson.parseAsync(rawScheduleData);
+
+export async function getStaticPaths() {
+  const scheduleDataSafe = await JadwalJson.parseAsync(rawScheduleData);
+
+  return scheduleDataSafe.map((schedule) => ({
+    params: { className: schedule.className },
+    props: schedule,
+  }));
+}
+
+const { className, schedules } = Astro.props as IIndividualClass;
+---
+
+<Layout
+  title={`Jadwal Pelajaran Kelas ${className}`}
+  description={`Info lengkap tentang jadwal pelajaran kelas ${className}`}
+>
+  <header class="pt-5 sm:pt-10 flex justify-center align-center w-full" data-timezone={Timezone}>
+    <h1
+      class="text-center text-poppins text-3xl md:text-4xl w-[50%] font-medium"
+    >
+      Jadwal Pelajaran Kelas {className}
+    </h1>
+  </header>
+
+  <main class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-7 sm:pt-10 pb-10 px-3 justify-center">
+    {
+      schedules.map((schedule) => (
+        <div class="border rounded dark:border-sm dark:bg-neutral-900 dark:border-neutral-900 p-5" data-day={schedule.day}>
+          <h3 class="pb-3 text-poppins font-semibold text-lg md:text-xl">
+            {getDay(schedule.day)}<DynamicDate client:idle 
+              Timezone={Timezone}
+              alloc={timeAlloc
+                .find((time) => time.currentDay === schedule.day)!
+                .alloc}
+              allSchedulesLength={schedules.length}
+              schedule={schedule}
+            />
+          </h3>
+          <table class="table-auto w-full">
+            <thead class="bg-blue-600 dark:bg-blue-800 text-gray-100 text-poppins text-lg">
+              <tr class="h-10">
+                <th class="text-start pl-3">JAM KE-</th>
+                <th class="text-center">Mapel</th>
+                <th class="text-end pr-3">Waktu</th>
+              </tr>
+            </thead>
+            <tbody class="gap-5">
+              {timeAlloc
+                .find((time) => time.currentDay === schedule.day)!
+                .alloc.map((time) => (
+                  <tr class={`text-lato text-lg h-12 ${time.isBreak ? "bg-sky-300 dark:bg-sky-900" : "light:even:bg-zinc-800 odd:bg-slate-100 dark:even-zinc-900 dark:odd:bg-slate-900"}`}>
+                    {!time.isBreak ? (
+                      <td class="pl-3">{time.JAM}</td>
+                      <td class="text-center py-3 flex flex-col">
+                        <p>
+                          <span class="font-semibold">{schedule.lessons[time.JAM! - 1].lesson ?? ""}</span>
+                          {schedule.lessons[time.JAM! - 1].lesson === "SUNDA" && (
+                            <>
+                              {"  "}
+                              <small>
+                                (Jangan Lupa Totopong dan Kamus!)
+                              </small>{" "}
+                            </>
+                          )}
+                        </p>
+                        {schedule.lessons[time.JAM! - 1].name && (
+                          <p>{schedule.lessons[time.JAM! - 1].name}</p>
+                        )}
+                      </td>
+                    ) : (
+                      <td colspan="2" class="text-center font-semibold">ISTIRAHAT</td>
+                    )}
+                    <td class="pr-3 text-end">{time.WAKTU.join(" - ")}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
+      ))
+    }
+  </main>
+
+  <ClassNavigator client:idle currentClass={className} classList={scheduleDataSafe.map((schedule) => schedule.className)} />
+</Layout>

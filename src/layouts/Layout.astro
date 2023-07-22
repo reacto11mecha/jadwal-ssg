@@ -1,0 +1,37 @@
+---
+import "@fontsource/lato";
+import "@fontsource/poppins";
+
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta name="description" content={description} />
+
+    <link rel="icon" href="/favicon.ico" />
+
+    <title>{title}</title>
+  </head>
+  <body class="dark:bg-neutral-950 dark:text-white transition-all">
+    <slot />
+
+    <script>
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+  </body>
+</html>
