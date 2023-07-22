@@ -55,6 +55,12 @@ devDependencies:
   '@vite-pwa/astro':
     specifier: ^0.1.1
     version: 0.1.1(astro@2.9.1)(vite-plugin-pwa@0.16.4)
+  typescript:
+    specifier: ^5.1.6
+    version: 5.1.6
+  vite-plugin-pwa:
+    specifier: ^0.16.4
+    version: 0.16.4(vite@4.4.6)(workbox-build@7.0.0)(workbox-window@7.0.0)
 
 packages:
 
