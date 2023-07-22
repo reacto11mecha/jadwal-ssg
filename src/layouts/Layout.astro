@@ -22,16 +22,16 @@ const { title, description } = Astro.props;
     <link rel="icon" href="/favicon.ico" />
 
     <title>{title}</title>
-  </head>
-  <body class="dark:bg-neutral-950 dark:text-white transition-all">
-    <slot />
 
-    <script>
+    <script is:inline>
       if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark')
       } else {
         document.documentElement.classList.remove('dark')
       }
     </script>
+  </head>
+  <body class="dark:bg-neutral-950 dark:text-white transition transition-all ease-linear">
+    <slot />
   </body>
 </html>

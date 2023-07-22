@@ -1,14 +1,8 @@
 import { useState, useEffect } from "react";
 
 import { BsGithub, BsFillMoonFill, BsSun } from "react-icons/bs/index";
-import { ImHome } from "react-icons/im/index";
 
-type Props = {
-  currentClass: string;
-  classList: string[];
-};
-
-export const ClassNavigator = ({ currentClass, classList }: Props) => {
+export const IndexFooter = () => {
   const [isDarkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
@@ -37,39 +31,17 @@ export const ClassNavigator = ({ currentClass, classList }: Props) => {
     <footer className="fixed inset-x-0 bottom-0 border-t dark:shadow dark:shadow-white dark:border-sm dark:border-neutral-950 border-solid w-full backdrop-blur-sm">
       <div className="flex flex-wrap h-full items-center justify-center">
         <div className="flex text-xl gap-5 p-3">
-          <select
-            className="min-h-[2em] dark:bg-zinc-900 dark:border-sm dark:border-zinc-900 bg-gray-50 border rounded-md"
-            value={currentClass}
-            onChange={(e) => {
-              document.location = `/${e.target.value}`;
-            }}
-          >
-            {classList.map((className) => (
-              <option key={className} value={className}>
-                {className}
-              </option>
-            ))}
-          </select>
-          <button
-            className="px-3 dark:bg-zinc-900 dark:border-sm dark:border-zinc-900 bg-gray-50 border rounded-md"
-            onClick={() => {
-              localStorage.removeItem("favorite-class");
-              document.location = "/";
-            }}
-          >
-            <ImHome />
-          </button>
           <a
             href="https://github.com/reacto11mecha/jadwal-ssg"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Halaman repositori github kode website ini"
-            className="px-3 dark:bg-zinc-900 dark:border-sm dark:border-zinc-900 bg-gray-50 border rounded-md flex justify-center items-center"
+            className="py-2 px-3 text-lg dark:bg-zinc-900 dark:border-sm dark:border-zinc-900 bg-gray-50 border rounded-md flex justify-center items-center"
           >
             <BsGithub />
           </a>
           <button
-            className="px-3 dark:bg-zinc-900 dark:border-sm dark:border-zinc-900 bg-gray-50 border rounded-md flex justify-center items-center"
+            className="py-2 px-3 text-lg dark:bg-zinc-900 dark:border-sm dark:border-zinc-900 bg-gray-50 border rounded-md flex justify-center items-center"
             onClick={(e) => {
               toggleTheme();
               (e.target as HTMLElement).blur();

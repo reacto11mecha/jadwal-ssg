@@ -35,7 +35,7 @@ const { className, schedules } = Astro.props as IIndividualClass;
     </h1>
   </header>
 
-  <main class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-7 sm:pt-10 pb-10 px-3 justify-center">
+  <main class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-7 sm:pt-10 pb-24 px-3 justify-center">
     {
       schedules.map((schedule) => (
         <div class="border rounded dark:border-sm dark:bg-neutral-900 dark:border-neutral-900 p-5" data-day={schedule.day}>

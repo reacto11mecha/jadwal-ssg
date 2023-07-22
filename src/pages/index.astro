@@ -2,7 +2,7 @@
 import { JadwalJson } from "@utils/schedule";
 import Layout from "@layouts/Layout.astro";
 
-import { Image } from "@astrojs/image/components";
+import { IndexFooter } from "@components/IndexFooter";
 
 import rawScheduleData from "@data/jadwal.json";
 
@@ -21,7 +21,7 @@ const classList = scheduleDataSafe.map((schedule) => schedule.className);
     </h1>
   </header>
 
-  <main class="py-10 px-5">
+  <main class="py-10 pb-20 px-5">
     <section
       class="pb-5 flex flex-col gap-3 lg:gap-0 md:flex-row justify-between"
     >
@@ -57,6 +57,8 @@ const classList = scheduleDataSafe.map((schedule) => schedule.className);
       }
     </section>
   </main>
+
+  <IndexFooter client:idle />
 
   <script>
     const select = document.querySelector("select") as HTMLSelectElement;
