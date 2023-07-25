@@ -1,47 +1,68 @@
-# Astro Starter Kit: Minimal
+# Jadwal SSG (Static Site Generator)
 
+Sebuah website yang dibuat untuk mempermudah akses ke jadwal pelajaran yang sudah dibuat list seluruh kelas dan mata pelajarannya.
+
+## Prerequisites
+
+Anda butuh
+
+- Node.js dan NPM (atau Package Manager lainnya)
+
+## Pemakaian
+
+### Menggunakan Template Repositori
+
+Pertama gunakan repo template ini untuk membuat repo baru, bisa menggunakan tombol [`Use this template`](https://github.com/reacto11mecha/jadwal-ssg/generate). Di step ini tampilannya mirip membuat repositori baru di github seperti biasa.
+
+### Mengubah Jadwal dan Waktu
+
+Untuk mengubah jadwal, terlebih dahulu clone repositori template yang sudah dibuat sebelumnya. Clone sesuai apa yang sudah kamu isikan pada saat mengenerate repositori. Contoh perintah:
+
+```sh
+# HTTPS
+git clone https://github.com/{username}/{nama_repositori}.git
+
+# SSH
+git clone git@github.com:{username}/{nama_repositori}.git
 ```
-npm create astro@latest -- --template minimal
+
+Setelah mengkloning repositori, baiknya menginstal package-package yang diperlukan agar mudah dalam melakukan validasi data. Untuk itu, jalankan perintah berikut.
+
+```sh
+npm install
+
+# atau menggunakan pnpm
+pnpm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+Informasi statis yang ada di website ini terdapat pada file [`src/data/jadwal.json`](src/data/jadwal.json) dan [`src/data/waktu.json`](src/data/waktu.json). Ubah kedua file tersebut sesuai apa yang di inginkan. Untuk masalah struktur, cek typing yang sesuai pada file [`src/utils/schedule.ts`](src/utils/schedule.ts).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+> Sumber data statis yang ada di project ini berasal dari [`xlsx-schedule-generator`](https://github.com/reacto11mecha/xlsx-schedule-generator) yang menghasilkan jadwal pelajaran dari sebuah file xlsx excel. Cek repositori tersebut untuk lebih lengkapnya.
 
-## 🚀 Project Structure
+### Menjalankan Aplikasi
 
-Inside of your Astro project, you'll see the following folders and files:
+Setelah mengubah jadwal pelajaran, build next js agar website bisa diakses.
 
-```
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```sh
+npm run build
+
+# atau menggunakan pnpm
+pnpm build
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Setelahnya jalankan astro, laman default berada di http://localhost:3000
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```sh
+npm start
 
-Any static assets, like images, can be placed in the `public/` directory.
+# atau menggunakan pnpm
+pnpm start
+```
 
-## 🧞 Commands
+## Local Development
 
-All commands are run from the root of the project, from a terminal:
+Anda bisa melakukan perubahan secara local dan mengubah tampilan atau apapun sesuka hati. Cara tersebut sudah dijelaskan pada poin [`pemaikaian`](#pemakaian).
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Lisensi
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Project ini bernaung di bawah lisensi [GPL-3.0 License](LICENSE).
