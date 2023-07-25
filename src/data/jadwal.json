@@ -104,7 +104,8 @@
             "name": "Rini Andayani, S,Si, S.Pd"
           },
           {
-            "lesson": "BK"
+            "lesson": "BK",
+            "name": "Bimawan, S.Pd"
           },
           {
             "lesson": "PKN",
@@ -231,7 +232,8 @@
             "name": "Novita Kwasisriuni S.Pd, M.Si"
           },
           {
-            "lesson": "BK"
+            "lesson": "BK",
+            "name": "Bimawan, S.Pd"
           },
           {
             "lesson": "PAI",
@@ -550,7 +552,8 @@
             "name": "Novita Kwasisriuni S.Pd, M.Si"
           },
           {
-            "lesson": "BK"
+            "lesson": "BK",
+            "name": "Bimawan, S.Pd"
           },
           {
             "lesson": "KIMIA",
@@ -779,7 +782,8 @@
             "name": "Dra. Komariah MM,Pd"
           },
           {
-            "lesson": "BK"
+            "lesson": "BK",
+            "name": "Bimawan, S.Pd"
           }
         ]
       },
@@ -960,7 +964,8 @@
         "day": 3,
         "lessons": [
           {
-            "lesson": "BK"
+            "lesson": "BK",
+            "name": "Bimawan, S.Pd"
           },
           {
             "lesson": "PKN",
@@ -1189,7 +1194,8 @@
             "name": "Carlince BS, SH, M,Si"
           },
           {
-            "lesson": "BK"
+            "lesson": "BK",
+            "name": "Lidya Nanda Putri, S.Pd"
           },
           {
             "lesson": "B.INGGRIS",
@@ -1430,7 +1436,8 @@
             "name": "Wahyu Aji Pasmah, S.Pd"
           },
           {
-            "lesson": "BK"
+            "lesson": "BK",
+            "name": "Lidya Nanda Putri, S.Pd"
           }
         ]
       },
@@ -1611,16 +1618,16 @@
         "day": 3,
         "lessons": [
           {
-            "lesson": "FISIKA",
-            "name": "Rianita, S.Pd"
+            "lesson": "PAI",
+            "name": "Ludfil Khakim, S.Pd"
           },
           {
-            "lesson": "FISIKA",
-            "name": "Rianita, S.Pd"
+            "lesson": "PAI",
+            "name": "Ludfil Khakim, S.Pd"
           },
           {
-            "lesson": "FISIKA",
-            "name": "Rianita, S.Pd"
+            "lesson": "PAI",
+            "name": "Ludfil Khakim, S.Pd"
           },
           {
             "lesson": "MTK",
@@ -1635,7 +1642,8 @@
             "name": "Wahyu Aji Pasmah, S.Pd"
           },
           {
-            "lesson": "BK"
+            "lesson": "BK",
+            "name": "Lidya Nanda Putri, S.Pd"
           },
           {
             "lesson": "GEO",
@@ -1708,16 +1716,16 @@
             "name": "Moch. Machruf"
           },
           {
-            "lesson": "PAI",
-            "name": "Ludfil Khakim, S.Pd"
+            "lesson": "FISIKA",
+            "name": "Rianita, S.Pd"
           },
           {
-            "lesson": "PAI",
-            "name": "Ludfil Khakim, S.Pd"
+            "lesson": "FISIKA",
+            "name": "Rianita, S.Pd"
           },
           {
-            "lesson": "PAI",
-            "name": "Ludfil Khakim, S.Pd"
+            "lesson": "FISIKA",
+            "name": "Rianita, S.Pd"
           },
           {
             "lesson": "TIK",
@@ -1860,7 +1868,8 @@
             "name": "Rianita, S.Pd"
           },
           {
-            "lesson": "BK"
+            "lesson": "BK",
+            "name": "Lidya Nanda Putri, S.Pd"
           },
           {
             "lesson": "SEJARAH",
@@ -2045,7 +2054,8 @@
         "day": 3,
         "lessons": [
           {
-            "lesson": "BK"
+            "lesson": "BK",
+            "name": "Lidya Nanda Putri, S.Pd"
           },
           {
             "lesson": "B. INDO",
@@ -2504,20 +2514,20 @@
             "name": "Tamia Agustina, S.Pd"
           },
           {
-            "lesson": "B. INDO",
-            "name": "Dra. Sarwini"
-          },
-          {
-            "lesson": "B. INDO",
-            "name": "Dra. Sarwini"
-          },
-          {
             "lesson": "BIOLOGI",
             "name": "Saptiawati, S.Pd"
           },
           {
             "lesson": "BIOLOGI",
             "name": "Saptiawati, S.Pd"
+          },
+          {
+            "lesson": "B. INDO",
+            "name": "Dra. Sarwini"
+          },
+          {
+            "lesson": "B. INDO",
+            "name": "Dra. Sarwini"
           }
         ]
       },
@@ -3833,20 +3843,20 @@
         "day": 4,
         "lessons": [
           {
-            "lesson": "B. INDO",
-            "name": "Rita Evawaty, S.Pd"
-          },
-          {
-            "lesson": "B. INDO",
-            "name": "Rita Evawaty, S.Pd"
-          },
-          {
             "lesson": "FISIIKA",
             "name": "Ari Wijaya, M.Pd"
           },
           {
             "lesson": "FISIIKA",
             "name": "Ari Wijaya, M.Pd"
+          },
+          {
+            "lesson": "B. INDO",
+            "name": "Rita Evawaty, S.Pd"
+          },
+          {
+            "lesson": "B. INDO",
+            "name": "Rita Evawaty, S.Pd"
           },
           {
             "lesson": "JEPANG",
@@ -4051,16 +4061,16 @@
         "day": 4,
         "lessons": [
           {
+            "lesson": "MTK",
+            "name": "Via Mona Vidya, S,Si"
+          },
+          {
+            "lesson": "MTK",
+            "name": "Via Mona Vidya, S,Si"
+          },
+          {
             "lesson": "FISIIKA",
             "name": "Ari Wijaya, M.Pd"
-          },
-          {
-            "lesson": "MTK",
-            "name": "Via Mona Vidya, S,Si"
-          },
-          {
-            "lesson": "MTK",
-            "name": "Via Mona Vidya, S,Si"
           },
           {
             "lesson": "PENJAS",
@@ -4729,15 +4739,16 @@
             "name": "Drs. Agus Martono"
           },
           {
-            "lesson": "BK"
-          },
-          {
             "lesson": "BIO",
             "name": "Drs. Hendra Yeanny, M.Pd"
           },
           {
             "lesson": "BIO",
             "name": "Drs. Hendra Yeanny, M.Pd"
+          },
+          {
+            "lesson": "BK",
+            "name": "Tri Wahyuni, S.Pd, M,Si"
           }
         ]
       },
@@ -4971,15 +4982,16 @@
             "name": "Drs. Agus Martono"
           },
           {
-            "lesson": "B.INGGRIS",
-            "name": "Adrianus Dami S.Pd"
+            "lesson": "BK",
+            "name": "Tri Wahyuni, S.Pd, M,Si"
           },
           {
             "lesson": "B.INGGRIS",
             "name": "Adrianus Dami S.Pd"
           },
           {
-            "lesson": "BK"
+            "lesson": "B.INGGRIS",
+            "name": "Adrianus Dami S.Pd"
           },
           {
             "lesson": "MTK",
@@ -5196,15 +5208,16 @@
             "name": "Dra. Sulistini, M.Pd"
           },
           {
-            "lesson": "B.INGGRIS",
-            "name": "Adrianus Dami S.Pd"
+            "lesson": "BK",
+            "name": "Tri Wahyuni, S.Pd, M,Si"
           },
           {
             "lesson": "B.INGGRIS",
             "name": "Adrianus Dami S.Pd"
           },
           {
-            "lesson": "BK"
+            "lesson": "B.INGGRIS",
+            "name": "Adrianus Dami S.Pd"
           },
           {
             "lesson": "SEJARAH",
@@ -5421,7 +5434,8 @@
             "name": "Siti Rochaeni, S.Pd"
           },
           {
-            "lesson": "BK"
+            "lesson": "BK",
+            "name": "Tri Wahyuni, S.Pd, M,Si"
           },
           {
             "lesson": "MTK",
@@ -5597,7 +5611,8 @@
             "name": "Siti Rochaeni, S.Pd"
           },
           {
-            "lesson": "BK"
+            "lesson": "BK",
+            "name": "Tri Wahyuni, S.Pd, M,Si"
           },
           {
             "lesson": "PKWU",
@@ -5683,16 +5698,16 @@
             "name": "Drs. Agus Martono"
           },
           {
-            "lesson": "MTK",
-            "name": "Drs. Bukhori, M,Si"
+            "lesson": "BK",
+            "name": "Tri Wahyuni, S.Pd, M,Si"
           },
           {
             "lesson": "MTK",
             "name": "Drs. Bukhori, M,Si"
           },
           {
-            "lesson": "JERMAN",
-            "name": "Shofa Shofura Sholihah, S,Hum"
+            "lesson": "MTK",
+            "name": "Drs. Bukhori, M,Si"
           }
         ]
       },
@@ -5855,15 +5870,16 @@
             "name": "Ferani Nurbaiti, S.Pd"
           },
           {
-            "lesson": "SUNDA",
-            "name": "Arimbi Nurul Hikmah, S.Pd"
+            "lesson": "JERMAN",
+            "name": "Shofa Shofura Sholihah, S,Hum"
           },
           {
             "lesson": "SUNDA",
             "name": "Arimbi Nurul Hikmah, S.Pd"
           },
           {
-            "lesson": "BK"
+            "lesson": "SUNDA",
+            "name": "Arimbi Nurul Hikmah, S.Pd"
           }
         ]
       }
@@ -5900,15 +5916,16 @@
             "name": "Dra. Sulistini, M.Pd"
           },
           {
-            "lesson": "SUNDA",
-            "name": "Arimbi Nurul Hikmah, S.Pd"
+            "lesson": "BK",
+            "name": "Fatimah Muthmainah, S.Pd"
           },
           {
             "lesson": "SUNDA",
             "name": "Arimbi Nurul Hikmah, S.Pd"
           },
           {
-            "lesson": "BK"
+            "lesson": "SUNDA",
+            "name": "Arimbi Nurul Hikmah, S.Pd"
           }
         ]
       },
@@ -6285,7 +6302,8 @@
             "name": "Arimbi Nurul Hikmah, S.Pd"
           },
           {
-            "lesson": "BK"
+            "lesson": "BK",
+            "name": "Fatimah Muthmainah, S.Pd"
           },
           {
             "lesson": "PKN",
@@ -6342,7 +6360,8 @@
             "name": "H. Nurhidayatullah, M.Ag"
           },
           {
-            "lesson": "BK"
+            "lesson": "BK",
+            "name": "Fatimah Muthmainah, S.Pd"
           }
         ]
       },
@@ -6576,7 +6595,8 @@
             "name": "Endah Priyati, M.Pd"
           },
           {
-            "lesson": "BK"
+            "lesson": "BK",
+            "name": "Fatimah Muthmainah, S.Pd"
           },
           {
             "lesson": "PENJAS",
@@ -6948,7 +6968,8 @@
             "name": "Nurlaeli, S.Pd"
           },
           {
-            "lesson": "BK"
+            "lesson": "BK",
+            "name": "Fatimah Muthmainah, S.Pd"
           }
         ]
       }
