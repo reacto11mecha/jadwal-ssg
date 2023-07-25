@@ -75,6 +75,14 @@ const { className, schedules } = Astro.props as IIndividualClass;
                               </small>{" "}
                             </>
                           )}
+                          {schedule.lessons[time.JAM! - 1].lesson === "PENJAS" && (
+                            <>
+                              {"  "}
+                              <small>
+                                (Jangan Lupa Baju Olahraga!)
+                              </small>{" "}
+                            </>
+                          )}
                         </p>
                         {schedule.lessons[time.JAM! - 1].name && (
                           <p>{schedule.lessons[time.JAM! - 1].name}</p>
