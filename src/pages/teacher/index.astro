@@ -70,7 +70,7 @@ const teachers = safeTeacherData.map(({ teacherName, teacherId }) => ({
 
   <script>
     const select = document.querySelector("select") as HTMLSelectElement;
-    const favoriteTeacher = localStorage.getItem("favorite-class");
+    const favoriteTeacher = localStorage.getItem("favorite-teacher");
 
     if (favoriteTeacher) {
       select.value = favoriteTeacher;
@@ -79,7 +79,7 @@ const teachers = safeTeacherData.map(({ teacherName, teacherId }) => ({
 
     select.addEventListener("change", (e) => {
       localStorage.setItem(
-        "favorite-class",
+        "favorite-teacher",
         (e.target as HTMLSelectElement).value
       );
       document.location = `/teacher/${(e.target as HTMLSelectElement).value}`;
