@@ -6,7 +6,9 @@ import { IndexFooter } from "@components/IndexFooter";
 
 import rawScheduleStudentData from "@data/jadwal-siswa.json";
 
-const scheduleDataSafe = await JadwalStudentJson.parseAsync(rawScheduleStudentData);
+const scheduleDataSafe = await JadwalStudentJson.parseAsync(
+  rawScheduleStudentData
+);
 
 const classList = scheduleDataSafe.map((schedule) => schedule.className);
 ---
@@ -33,7 +35,9 @@ const classList = scheduleDataSafe.map((schedule) => schedule.className);
           Pilih kelas favorit supaya otomatis terbuka ketika membuka jadwal.
         </p>
       </div>
-      <select class="border rounded bg-white dark:border-neutral-900 dark:border-sm dark:bg-neutral-900 w-full h-10 sm:h-10 md:h-auto md:w-32">
+      <select
+        class="border rounded bg-white dark:border-neutral-900 dark:border-sm dark:bg-neutral-900 w-full h-10 sm:h-10 md:h-auto md:w-32"
+      >
         <option value="">Pilih kelas</option>
         {
           classList.map((className) => (
@@ -74,9 +78,7 @@ const classList = scheduleDataSafe.map((schedule) => schedule.className);
         "favorite-class",
         (e.target as HTMLSelectElement).value
       );
-      document.location = `/${
-        (e.target as HTMLSelectElement).value
-      }`;
+      document.location = `/${(e.target as HTMLSelectElement).value}`;
     });
   </script>
 </Layout>

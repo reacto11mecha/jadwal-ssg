@@ -21,13 +21,16 @@ export async function getStaticPaths() {
 }
 
 const { className, schedules } = Astro.props as IIndividualClassStudent;
+
 ---
 
 <Layout
   title={`Jadwal Pelajaran Kelas ${className}`}
   description={`Info lengkap tentang jadwal pelajaran kelas ${className}`}
 >
-  <header class="pt-5 sm:pt-10 flex justify-center align-center w-full" data-timezone={Timezone}>
+  <span class="hidden" id="data-store" data-information={JSON.stringify({ scheduleLength: schedules.length - 1, timeAlloc, Timezone })}></span>
+
+  <header class="pt-5 sm:pt-10 flex justify-center align-center w-full">
     <h1
       class="text-center text-poppins text-3xl md:text-4xl w-[50%] font-medium"
     >
@@ -102,4 +105,87 @@ const { className, schedules } = Astro.props as IIndividualClassStudent;
   </main>
 
   <ClassNavigator client:idle currentClass={className} classList={scheduleDataSafe.map((schedule) => schedule.className)} />
+
+  <script>
+    import { DateTime } from "luxon";
+
+    function main() {
+      const storeElement = document.querySelector("#data-store");
+
+      if (storeElement instanceof HTMLElement) {
+        type ITimeAllocation = {
+          alloc: {
+              WAKTU: string[];
+              JAM?: number | undefined;
+              isBreak?: boolean | undefined;
+          }[];
+          currentDay: number;
+        }
+
+
+        type TParsedDataset = {
+          scheduleLength: number;
+          timeAlloc: ITimeAllocation[];
+          Timezone: string
+        }
+
+        const { scheduleLength, timeAlloc, Timezone } = JSON.parse(storeElement.dataset.information as string) as TParsedDataset;
+
+        const { alloc: lastAlloc } = timeAlloc[timeAlloc.length - 1];
+        const lastSubAlloc = lastAlloc[lastAlloc.length - 1].WAKTU[1].replace(".", ":");
+        const lastHourAndMinute = lastSubAlloc.split(":");
+
+        const now = DateTime.now().setZone(Timezone);
+
+        const isNextWeek =
+          DateTime.now()
+            .setZone(Timezone)
+            .startOf("week")
+            .plus({ days: scheduleLength })
+            .set({
+              hour: parseInt(lastHourAndMinute[0]),
+              minute: parseInt(lastHourAndMinute[1]),
+            }) <= now;
+
+        if (isNextWeek) {
+          const targetCard = document.querySelector('[data-day="1"]');
+
+          targetCard?.scrollIntoView({
+            behavior: "smooth",
+          });
+
+          return;
+        }
+
+        const { alloc: allocationByDay } = timeAlloc.find(({ currentDay }) => currentDay === now.weekday)!;
+        const lastTimeByCurrentDay = allocationByDay[allocationByDay.length - 1].WAKTU[1].replace(".", ":");
+        const currentDaylastHourAndMinute = lastTimeByCurrentDay.split(":");
+
+        const isTheEndOfTheDay = DateTime.now()
+          .setZone(Timezone)
+          .set({
+            hour: parseInt(currentDaylastHourAndMinute[0]),
+            minute: parseInt(currentDaylastHourAndMinute[1]),
+          }) <= now;
+
+        if (isTheEndOfTheDay) {
+          const targetCard = document.querySelector(`[data-day="${now.weekday + 1}"]`);
+
+          targetCard?.scrollIntoView({
+            behavior: "smooth",
+          });
+
+          return;
+        }
+
+        const currentDayCard = document.querySelector(`[data-day="${now.weekday}"]`);
+
+        currentDayCard?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    }
+
+    main()
+  </script>
 </Layout>
