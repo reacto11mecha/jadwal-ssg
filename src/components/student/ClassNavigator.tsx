@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { BsGithub, BsFillMoonFill, BsSun } from "react-icons/bs/index";
-import { ImHome } from "react-icons/im/index";
+import { IoMdArrowRoundBack } from "react-icons/io/index";
 
 type Props = {
   currentClass: string;
@@ -14,8 +14,8 @@ export const ClassNavigator = ({ currentClass, classList }: Props) => {
   useEffect(() => {
     setDarkMode(
       localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
     );
   }, []);
 
@@ -41,7 +41,7 @@ export const ClassNavigator = ({ currentClass, classList }: Props) => {
             className="min-h-[2em] dark:bg-zinc-900 dark:border-sm dark:border-zinc-900 bg-gray-50 border rounded-md"
             value={currentClass}
             onChange={(e) => {
-              document.location = `/${e.target.value}`;
+              document.location = `/student/${e.target.value}`;
             }}
           >
             {classList.map((className) => (
@@ -54,10 +54,10 @@ export const ClassNavigator = ({ currentClass, classList }: Props) => {
             className="px-3 dark:bg-zinc-900 dark:border-sm dark:border-zinc-900 bg-gray-50 border rounded-md"
             onClick={() => {
               localStorage.removeItem("favorite-class");
-              document.location = "/";
+              document.location = "/student";
             }}
           >
-            <ImHome />
+            <IoMdArrowRoundBack />
           </button>
           <a
             href="https://github.com/reacto11mecha/jadwal-ssg"
@@ -74,9 +74,8 @@ export const ClassNavigator = ({ currentClass, classList }: Props) => {
               toggleTheme();
               (e.target as HTMLElement).blur();
             }}
-            aria-label={`Ubah tema halaman menjadi ${
-              isDarkMode ? "cerah" : "gelap"
-            }`}
+            aria-label={`Ubah tema halaman menjadi ${isDarkMode ? "cerah" : "gelap"
+              }`}
           >
             {isDarkMode ? <BsFillMoonFill /> : <BsSun />}
           </button>

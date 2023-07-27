@@ -1,0 +1,88 @@
+---
+import { JadwalTeacherJson } from "@utils/schedule";
+import Layout from "@layouts/Layout.astro";
+
+import { IndexFooter } from "@components/student/IndexFooter";
+
+import rawScheduleTeacherData from "@data/jadwal-guru.json";
+
+const safeTeacherData = await JadwalTeacherJson.parseAsync(
+  rawScheduleTeacherData
+);
+
+const teachers = safeTeacherData.map(({ teacherName, teacherId }) => ({
+  teacherName,
+  teacherId,
+}));
+---
+
+<Layout
+  title="Daftar Jadwal Mengajar SMA Negeri 12 Kota Bekasi"
+  description="Daftar jadwal Mengajar SMAN 12 Bekasi"
+>
+  <header class="pt-[1.8rem] w-full">
+    <h1 class="text-center text-poppins text-4xl lg:text-5xl font-medium">
+      Jadwal Mengajar
+    </h1>
+  </header>
+
+  <main class="py-10 pb-20 px-5">
+    <section
+      class="pb-5 flex flex-col gap-3 lg:gap-0 md:flex-row justify-between"
+    >
+      <div>
+        <h4 class="font-poppins font-semibold text-xl lg:text-2xl">
+          Guru favorit
+        </h4>
+        <p class="font-lato text-lg lg:text-xl">
+          Pilih nama guru favorit supaya otomatis terbuka ketika membuka web
+          ini.
+        </p>
+      </div>
+      <select
+        class="border rounded bg-white dark:border-neutral-900 dark:border-sm dark:bg-neutral-900 w-full h-10 sm:h-10 md:h-auto md:w-32"
+      >
+        <option value="">Pilih guru favorit</option>
+        {
+          teachers.map((teacher) => (
+            <option value={teacher.teacherId}>{teacher.teacherName}</option>
+          ))
+        }
+      </select>
+    </section>
+    <section
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
+    >
+      {
+        teachers.map((teacher) => (
+          <a
+            class="rounded border dark:border-neutral-900 dark:border-sm dark:bg-neutral-900 font-lato text-lg p-5 text-center"
+            href={`/teacher/${teacher.teacherId}`}
+          >
+            {teacher.teacherName}
+          </a>
+        ))
+      }
+    </section>
+  </main>
+
+  <IndexFooter client:idle />
+
+  <script>
+    const select = document.querySelector("select") as HTMLSelectElement;
+    const favoriteTeacher = localStorage.getItem("favorite-teacher");
+
+    if (favoriteTeacher) {
+      select.value = favoriteTeacher;
+      document.location = `/teacher/${favoriteTeacher}`;
+    }
+
+    select.addEventListener("change", (e) => {
+      localStorage.setItem(
+        "favorite-teacher",
+        (e.target as HTMLSelectElement).value
+      );
+      document.location = `/teacher/${(e.target as HTMLSelectElement).value}`;
+    });
+  </script>
+</Layout>

@@ -1,0 +1,175 @@
+---
+import {
+  JadwalTeacherJson,
+  WaktuJson,
+  getDay,
+  type IIndividualTeacher,
+} from "@utils/schedule";
+import Layout from "@layouts/Layout.astro";
+
+import { DynamicDate } from "@components/teacher/DynamicDate";
+import { TeacherNavigator } from "@components/teacher/TeacherNavigator";
+
+import rawScheduleTeacherData from "@data/jadwal-guru.json";
+import rawTimeData from "@data/waktu.json";
+
+const { TimeAllocation: timeAlloc, TZ: Timezone } = await WaktuJson.parseAsync(
+  rawTimeData
+);
+const teacherScheduleDataSafe = await JadwalTeacherJson.parseAsync(
+  rawScheduleTeacherData
+);
+
+export async function getStaticPaths() {
+  const teacherScheduleDataSafe = await JadwalTeacherJson.parseAsync(
+    rawScheduleTeacherData
+  );
+
+  return teacherScheduleDataSafe.map((teacher) => ({
+    params: { teacherId: teacher.teacherId },
+    props: teacher,
+  }));
+}
+
+const { teacherName, teacherId, className } = Astro.props as IIndividualTeacher;
+---
+
+<Layout
+  title={`Jadwal Mengajar ${teacherName}`}
+  description={`Info lengkap tentang jadwal mengajar ${teacherName}`}
+>
+  <span class="hidden" id="data-store" data-information={JSON.stringify({ scheduleLength: className.length - 1, timeAlloc, Timezone })}></span>
+
+  <header class="pt-5 sm:pt-10 flex justify-center align-center w-full">
+    <h1
+      class="text-center text-poppins text-3xl md:text-4xl w-[50%] font-medium"
+    >
+      Jadwal Mengajar {teacherName}
+    </h1>
+  </header>
+
+  <main
+    class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-7 sm:pt-10 pb-24 px-3 justify-center"
+  >
+    {
+      className.map((currentClass) => (
+        <div class="border rounded dark:border-sm dark:bg-neutral-900 dark:border-neutral-900 p-5" data-day={currentClass.currentDay}>
+          <h3 class="pb-3 text-poppins font-semibold text-lg md:text-xl">
+            {getDay(currentClass.currentDay)}<DynamicDate client:idle Timezone={Timezone} alloc={timeAlloc
+                .find((time) => time.currentDay === currentClass.currentDay)!.alloc} allSchedulesLength={currentClass.alloc.length} schedule={className.find(curr => curr.currentDay === currentClass.currentDay)!} />
+          </h3>
+          <table class="table-auto w-full">
+            <thead class="bg-blue-600 dark:bg-blue-800 text-gray-100 text-poppins text-lg">
+              <tr class="h-10">
+                <th class="text-start pl-3">JAM KE-</th>
+                <th class="text-center">Kelas</th>
+                <th class="text-end pr-3">Waktu</th>
+              </tr>
+            </thead>
+            <tbody class="gap-5">
+              {timeAlloc
+                .find((time) => time.currentDay === currentClass.currentDay)!
+                .alloc.map((time, idx) => (
+                  <tr class={`text-lato text-lg h-12 ${time.isBreak ? "bg-sky-300 dark:bg-sky-900" : "light:even:bg-zinc-800 odd:bg-slate-100 dark:even-zinc-900 dark:odd:bg-slate-900"}`}>
+                    {!time.isBreak ? (
+                      <td class="pl-3">{time.JAM}</td>
+                      <td class="text-center">
+                        {currentClass.alloc[idx].kelas ?? ""}
+                      </td>
+                    ) : (
+                      <td colspan="2" class="text-center font-semibold">ISTIRAHAT</td>
+                    )}
+                    <td class="pr-3 text-end">{time.WAKTU.join(" - ")}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
+      ))
+    }
+  </main>
+
+  <TeacherNavigator client:idle currentTeacher={teacherId} teacherList={teacherScheduleDataSafe.map(({ teacherId, teacherName }) => ({ teacherId, teacherName }))} />
+
+  <script>
+    import { DateTime } from "luxon";
+
+    function main() {
+      const storeElement = document.querySelector("#data-store");
+
+      if (storeElement instanceof HTMLElement) {
+        type ITimeAllocation = {
+          alloc: {
+              WAKTU: string[];
+              JAM?: number | undefined;
+              isBreak?: boolean | undefined;
+          }[];
+          currentDay: number;
+        }
+
+        type TParsedDataset = {
+          scheduleLength: number;
+          timeAlloc: ITimeAllocation[];
+          Timezone: string
+        }
+
+        const { scheduleLength, timeAlloc, Timezone } = JSON.parse(storeElement.dataset.information as string) as TParsedDataset;
+
+        const { alloc: lastAlloc } = timeAlloc[timeAlloc.length - 1];
+        const lastSubAlloc = lastAlloc[lastAlloc.length - 1].WAKTU[1].replace(".", ":");
+        const lastHourAndMinute = lastSubAlloc.split(":");
+
+        const now = DateTime.now().setZone(Timezone);
+
+        const isNextWeek =
+          DateTime.now()
+            .setZone(Timezone)
+            .startOf("week")
+            .plus({ days: scheduleLength })
+            .set({
+              hour: parseInt(lastHourAndMinute[0]),
+              minute: parseInt(lastHourAndMinute[1]),
+            }) <= now;
+
+        if (isNextWeek) {
+          const targetCard = document.querySelector('[data-day="1"]');
+
+          targetCard?.scrollIntoView({
+            behavior: "smooth",
+          });
+
+          return;
+        }
+
+        const { alloc: allocationByDay } = timeAlloc.find(({ currentDay }) => currentDay === now.weekday)!;
+        const lastTimeByCurrentDay = allocationByDay[allocationByDay.length - 1].WAKTU[1].replace(".", ":");
+        const currentDaylastHourAndMinute = lastTimeByCurrentDay.split(":");
+
+        const isTheEndOfTheDay = DateTime.now()
+          .setZone(Timezone)
+          .set({
+            hour: parseInt(currentDaylastHourAndMinute[0]),
+            minute: parseInt(currentDaylastHourAndMinute[1]),
+          }) <= now;
+
+        if (isTheEndOfTheDay) {
+          const targetCard = document.querySelector(`[data-day="${now.weekday + 1}"]`);
+
+          targetCard?.scrollIntoView({
+            behavior: "smooth",
+          });
+
+          return;
+        }
+
+        const currentDayCard = document.querySelector(`[data-day="${now.weekday}"]`);
+
+        currentDayCard?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    }
+
+    main()
+  </script>
+</Layout>

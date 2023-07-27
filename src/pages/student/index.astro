@@ -1,0 +1,84 @@
+---
+import { JadwalStudentJson } from "@utils/schedule";
+import Layout from "@layouts/Layout.astro";
+
+import { IndexFooter } from "@components/student/IndexFooter";
+
+import rawScheduleStudentData from "@data/jadwal-siswa.json";
+
+const scheduleDataSafe = await JadwalStudentJson.parseAsync(
+  rawScheduleStudentData
+);
+
+const classList = scheduleDataSafe.map((schedule) => schedule.className);
+---
+
+<Layout
+  title="Daftar Jadwal Belajar SMA Negeri 12 Kota Bekasi"
+  description="Daftar jadwal belajar SMAN 12 Bekasi"
+>
+  <header class="pt-[1.8rem] w-full">
+    <h1 class="text-center text-poppins text-4xl lg:text-5xl font-medium">
+      Jadwal Belajar
+    </h1>
+  </header>
+
+  <main class="py-10 pb-20 px-5">
+    <section
+      class="pb-5 flex flex-col gap-3 lg:gap-0 md:flex-row justify-between"
+    >
+      <div>
+        <h4 class="font-poppins font-semibold text-xl lg:text-2xl">
+          Kelas favorit
+        </h4>
+        <p class="font-lato text-lg lg:text-xl">
+          Pilih kelas favorit supaya otomatis terbuka ketika membuka jadwal.
+        </p>
+      </div>
+      <select
+        class="border rounded bg-white dark:border-neutral-900 dark:border-sm dark:bg-neutral-900 w-full h-10 sm:h-10 md:h-auto md:w-32"
+      >
+        <option value="">Pilih kelas</option>
+        {
+          classList.map((className) => (
+            <option value={className}>{className}</option>
+          ))
+        }
+      </select>
+    </section>
+    <section
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
+    >
+      {
+        classList.map((className) => (
+          <a
+            class="rounded border dark:border-neutral-900 dark:border-sm dark:bg-neutral-900 font-lato text-lg p-5 text-center"
+            href={`/student/${className}`}
+          >
+            {className}
+          </a>
+        ))
+      }
+    </section>
+  </main>
+
+  <IndexFooter client:idle />
+
+  <script>
+    const select = document.querySelector("select") as HTMLSelectElement;
+    const favoriteClass = localStorage.getItem("favorite-class");
+
+    if (favoriteClass) {
+      select.value = favoriteClass;
+      document.location = `/student/${favoriteClass}`;
+    }
+
+    select.addEventListener("change", (e) => {
+      localStorage.setItem(
+        "favorite-class",
+        (e.target as HTMLSelectElement).value
+      );
+      document.location = `/student/${(e.target as HTMLSelectElement).value}`;
+    });
+  </script>
+</Layout>

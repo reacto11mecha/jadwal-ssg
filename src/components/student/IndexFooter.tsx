@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 
 import { BsGithub, BsFillMoonFill, BsSun } from "react-icons/bs/index";
+import { ImHome } from "react-icons/im/index";
+
 
 export const IndexFooter = () => {
   const [isDarkMode, setDarkMode] = useState(false);
@@ -40,6 +42,16 @@ export const IndexFooter = () => {
           >
             <BsGithub />
           </a>
+          <button
+            onClick={() => {
+              localStorage.removeItem("favorite-position");
+              document.location = "/";
+            }}
+            aria-label="Halaman depan website ini"
+            className="py-2 px-3 text-lg dark:bg-zinc-900 dark:border-sm dark:border-zinc-900 bg-gray-50 border rounded-md flex justify-center items-center"
+          >
+            <ImHome />
+          </button>
           <button
             className="py-2 px-3 text-lg dark:bg-zinc-900 dark:border-sm dark:border-zinc-900 bg-gray-50 border rounded-md flex justify-center items-center"
             onClick={(e) => {

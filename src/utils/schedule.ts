@@ -39,6 +39,42 @@ export type IIndividualClassStudent = allClassScheduleStudent[number];
 export type IScheduleStudent = IIndividualClassStudent["schedules"][number];
 // jadwal-siswa.json file typing end //
 
+// jadwal-teacher.json file typing start //
+export const JadwalTeacherJson = z
+  .array(
+    z.object({
+      // Nama masing-masing guru.
+      teacherName: z.string(),
+
+      // Alokasi nomor bagi masing-masing guru.
+      // Berfungsi sebagai penanda.
+      teacherId: z.number(),
+
+      className: z.array(
+        z.object({
+          currentDay: dayValidation,
+
+          // Array yang berisikan object jadwal
+          // guru mengajar siswa pada hari spesifik
+          alloc: z
+            .array(
+              z.object({
+                kelas: z.string().optional(),
+                isBreak: z.boolean().optional(),
+              })
+            )
+            .nonempty(),
+        })
+      ),
+    })
+  )
+  .nonempty();
+
+export type allTeacherStudent = z.infer<typeof JadwalTeacherJson>;
+
+export type IIndividualTeacher = allTeacherStudent[number];
+// jadwal-teacher.json file typing end //
+
 // waktu.json file typing start //
 export const WaktuJson = z.object({
   TimeAllocation: z
