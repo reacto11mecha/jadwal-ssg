@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 
 import { DateTime } from "luxon";
 
-import type { ITimeAllocation, ISchedule } from "@utils/schedule";
+import type { ITimeAllocation, IScheduleStudent } from "@utils/schedule";
 
 type Props = {
   Timezone: string;
-  schedule: ISchedule;
+  schedule: IScheduleStudent;
   allSchedulesLength: number;
   alloc: ITimeAllocation["alloc"];
 };

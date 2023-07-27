@@ -1,18 +1,18 @@
 ---
-import { JadwalJson, WaktuJson, getDay, type IIndividualClass } from "@utils/schedule";
+import { JadwalStudentJson, WaktuJson, getDay, type IIndividualClassStudent } from "@utils/schedule";
 import Layout from "@layouts/Layout.astro";
 
 import { DynamicDate } from "@components/DynamicDate";
 import { ClassNavigator } from "@components/ClassNavigator";
 
-import rawScheduleData from "@data/jadwal.json";
+import rawScheduleStudentData from "@data/jadwal-siswa.json";
 import rawTimeData from "@data/waktu.json";
 
 const { TimeAllocation: timeAlloc, TZ: Timezone } = await WaktuJson.parseAsync(rawTimeData);
-const scheduleDataSafe = await JadwalJson.parseAsync(rawScheduleData);
+const scheduleDataSafe = await JadwalStudentJson.parseAsync(rawScheduleStudentData);
 
 export async function getStaticPaths() {
-  const scheduleDataSafe = await JadwalJson.parseAsync(rawScheduleData);
+  const scheduleDataSafe = await JadwalStudentJson.parseAsync(rawScheduleStudentData);
 
   return scheduleDataSafe.map((schedule) => ({
     params: { className: schedule.className },
@@ -20,7 +20,7 @@ export async function getStaticPaths() {
   }));
 }
 
-const { className, schedules } = Astro.props as IIndividualClass;
+const { className, schedules } = Astro.props as IIndividualClassStudent;
 ---
 
 <Layout

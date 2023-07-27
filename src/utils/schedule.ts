@@ -4,8 +4,8 @@ import { z } from "zod";
 // Sampai angka 7 (minggu)
 const dayValidation = z.number().positive().min(1).max(7);
 
-// jadwal.json file typing start //
-export const JadwalJson = z
+// jadwal-siswa.json file typing start //
+export const JadwalStudentJson = z
   .array(
     z.object({
       // Nama masing-masing kelas.
@@ -32,12 +32,12 @@ export const JadwalJson = z
   )
   .nonempty();
 
-export type allClassSchedule = z.infer<typeof JadwalJson>;
+export type allClassScheduleStudent = z.infer<typeof JadwalStudentJson>;
 
-export type IIndividualClass = allClassSchedule[number];
+export type IIndividualClassStudent = allClassScheduleStudent[number];
 
-export type ISchedule = IIndividualClass["schedules"][number];
-// jadwal.json file typing end //
+export type IScheduleStudent = IIndividualClassStudent["schedules"][number];
+// jadwal-siswa.json file typing end //
 
 // waktu.json file typing start //
 export const WaktuJson = z.object({

@@ -1,12 +1,12 @@
 ---
-import { JadwalJson } from "@utils/schedule";
+import { JadwalStudentJson } from "@utils/schedule";
 import Layout from "@layouts/Layout.astro";
 
 import { IndexFooter } from "@components/IndexFooter";
 
-import rawScheduleData from "@data/jadwal.json";
+import rawScheduleStudentData from "@data/jadwal-siswa.json";
 
-const scheduleDataSafe = await JadwalJson.parseAsync(rawScheduleData);
+const scheduleDataSafe = await JadwalStudentJson.parseAsync(rawScheduleStudentData);
 
 const classList = scheduleDataSafe.map((schedule) => schedule.className);
 ---
