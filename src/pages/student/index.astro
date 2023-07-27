@@ -2,7 +2,7 @@
 import { JadwalStudentJson } from "@utils/schedule";
 import Layout from "@layouts/Layout.astro";
 
-import { IndexFooter } from "@components/IndexFooter";
+import { IndexFooter } from "@components/student/IndexFooter";
 
 import rawScheduleStudentData from "@data/jadwal-siswa.json";
 
@@ -53,7 +53,7 @@ const classList = scheduleDataSafe.map((schedule) => schedule.className);
         classList.map((className) => (
           <a
             class="rounded border dark:border-neutral-900 dark:border-sm dark:bg-neutral-900 font-lato text-lg p-5 text-center"
-            href={`/${className}`}
+            href={`/student/${className}`}
           >
             {className}
           </a>
@@ -70,7 +70,7 @@ const classList = scheduleDataSafe.map((schedule) => schedule.className);
 
     if (favoriteClass) {
       select.value = favoriteClass;
-      document.location = `/${favoriteClass}`;
+      document.location = `/student/${favoriteClass}`;
     }
 
     select.addEventListener("change", (e) => {
@@ -78,7 +78,7 @@ const classList = scheduleDataSafe.map((schedule) => schedule.className);
         "favorite-class",
         (e.target as HTMLSelectElement).value
       );
-      document.location = `/${(e.target as HTMLSelectElement).value}`;
+      document.location = `/student/${(e.target as HTMLSelectElement).value}`;
     });
   </script>
 </Layout>
