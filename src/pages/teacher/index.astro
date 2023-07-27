@@ -1,25 +1,28 @@
 ---
-import { JadwalStudentJson } from "@utils/schedule";
+import { JadwalTeacherJson } from "@utils/schedule";
 import Layout from "@layouts/Layout.astro";
 
 import { IndexFooter } from "@components/student/IndexFooter";
 
-import rawScheduleStudentData from "@data/jadwal-siswa.json";
+import rawScheduleTeacherData from "@data/jadwal-guru.json";
 
-const scheduleDataSafe = await JadwalStudentJson.parseAsync(
-  rawScheduleStudentData
+const safeTeacherData = await JadwalTeacherJson.parseAsync(
+  rawScheduleTeacherData
 );
 
-const classList = scheduleDataSafe.map((schedule) => schedule.className);
+const teachers = safeTeacherData.map(({ teacherName, teacherId }) => ({
+  teacherName,
+  teacherId,
+}));
 ---
 
 <Layout
-  title="Daftar Jadwal Belajar SMA Negeri 12 Kota Bekasi"
-  description="Daftar jadwal belajar SMAN 12 Bekasi"
+  title="Daftar Jadwal Mengajar SMA Negeri 12 Kota Bekasi"
+  description="Daftar jadwal Mengajar SMAN 12 Bekasi"
 >
   <header class="pt-[1.8rem] w-full">
     <h1 class="text-center text-poppins text-4xl lg:text-5xl font-medium">
-      Jadwal Belajar
+      Jadwal Mengajar
     </h1>
   </header>
 
@@ -29,19 +32,20 @@ const classList = scheduleDataSafe.map((schedule) => schedule.className);
     >
       <div>
         <h4 class="font-poppins font-semibold text-xl lg:text-2xl">
-          Kelas favorit
+          Guru favorit
         </h4>
         <p class="font-lato text-lg lg:text-xl">
-          Pilih kelas favorit supaya otomatis terbuka ketika membuka jadwal.
+          Pilih nama guru favorit supaya otomatis terbuka ketika membuka web
+          ini.
         </p>
       </div>
       <select
         class="border rounded bg-white dark:border-neutral-900 dark:border-sm dark:bg-neutral-900 w-full h-10 sm:h-10 md:h-auto md:w-32"
       >
-        <option value="">Pilih kelas</option>
+        <option value="">Pilih guru favorit</option>
         {
-          classList.map((className) => (
-            <option value={className}>{className}</option>
+          teachers.map((teacher) => (
+            <option value={teacher.teacherId}>{teacher.teacherName}</option>
           ))
         }
       </select>
@@ -50,12 +54,12 @@ const classList = scheduleDataSafe.map((schedule) => schedule.className);
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
     >
       {
-        classList.map((className) => (
+        teachers.map((teacher) => (
           <a
             class="rounded border dark:border-neutral-900 dark:border-sm dark:bg-neutral-900 font-lato text-lg p-5 text-center"
-            href={`/student/${className}`}
+            href={`/teacher/${teacher.teacherId}`}
           >
-            {className}
+            {teacher.teacherName}
           </a>
         ))
       }
@@ -66,11 +70,11 @@ const classList = scheduleDataSafe.map((schedule) => schedule.className);
 
   <script>
     const select = document.querySelector("select") as HTMLSelectElement;
-    const favoriteClass = localStorage.getItem("favorite-class");
+    const favoriteTeacher = localStorage.getItem("favorite-class");
 
-    if (favoriteClass) {
-      select.value = favoriteClass;
-      document.location = `/student/${favoriteClass}`;
+    if (favoriteTeacher) {
+      select.value = favoriteTeacher;
+      document.location = `/teacher/${favoriteTeacher}`;
     }
 
     select.addEventListener("change", (e) => {
@@ -78,7 +82,7 @@ const classList = scheduleDataSafe.map((schedule) => schedule.className);
         "favorite-class",
         (e.target as HTMLSelectElement).value
       );
-      document.location = `/student/${(e.target as HTMLSelectElement).value}`;
+      document.location = `/teacher/${(e.target as HTMLSelectElement).value}`;
     });
   </script>
 </Layout>
