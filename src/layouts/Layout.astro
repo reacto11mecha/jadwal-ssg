@@ -2,8 +2,8 @@
 import "@fontsource/lato";
 import "@fontsource/poppins";
 
-import ReloadPrompt from '@components/ReloadPrompt.astro';
-import { pwaInfo } from 'virtual:pwa-info';
+import ReloadPrompt from "@components/ReloadPrompt.astro";
+import { pwaInfo } from "virtual:pwa-info";
 
 export interface Props {
   title: string;
@@ -22,23 +22,43 @@ const { title, description } = Astro.props;
 
     <meta name="description" content={description} />
 
-    <meta name="theme-color" content="#0074d9"/>
+    <meta name="theme-color" content="#0074d9" />
 
     <link rel="icon" href="/favicon.png" />
 
     <title>{title}</title>
 
     <script is:inline>
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark')
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
       } else {
-        document.documentElement.classList.remove('dark')
+        document.documentElement.classList.remove("dark");
       }
     </script>
 
-    { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
+    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
+
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4TVMGBR2YN"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-4TVMGBR2YN");
+    </script>
   </head>
-  <body class="dark:bg-neutral-950 dark:text-white transition transition-all ease-linear">
+  <body
+    class="dark:bg-neutral-950 dark:text-white transition transition-all ease-linear"
+  >
     <slot />
     <ReloadPrompt />
   </body>

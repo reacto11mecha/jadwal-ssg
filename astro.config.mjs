@@ -1,8 +1,9 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import AstroPWA from "@vite-pwa/astro";
-
 import react from "@astrojs/react";
+
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,31 +19,32 @@ export default defineConfig({
         theme_color: "#0074d9",
         name: "Jadwal Pelajaran SMAN 12 Kota Bekasi",
         short_name: "Jadwal Pelajaran",
-        description: "Sebuah web yang berisikan jadwal pelajaran dari seluruh kelas",
+        description:
+          "Sebuah web yang berisikan jadwal pelajaran dari seluruh kelas",
         icons: [
           {
             src: "/icon-192x192.png",
             sizes: "192x192",
             type: "image/png",
-            purpose: "any maskable"
+            purpose: "any maskable",
           },
           {
             src: "/icon-256x256.png",
             sizes: "256x256",
             type: "image/png",
-            purpose: "any maskable"
+            purpose: "any maskable",
           },
           {
             src: "/icon-384x384.png",
             sizes: "384x384",
             type: "image/png",
-            purpose: "any maskable"
+            purpose: "any maskable",
           },
           {
             src: "/icon-512x512.png",
             sizes: "512x512",
             type: "image/png",
-            purpose: "any maskable"
+            purpose: "any maskable",
           },
         ],
       },
@@ -53,6 +55,11 @@ export default defineConfig({
       devOptions: {
         enabled: true,
         navigateFallbackAllowlist: [/^\/404$/],
+      },
+    }),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
       },
     }),
   ],
