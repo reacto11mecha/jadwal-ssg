@@ -70,7 +70,7 @@ const { teacherName, teacherId, className } = Astro.props as IIndividualTeacher;
               {timeAlloc
                 .find((time) => time.currentDay === currentClass.currentDay)!
                 .alloc.map((time, idx) => (
-                  <tr class={`text-lato text-lg h-12 ${time.isBreak ? "bg-sky-300 dark:bg-sky-900" : "light:even:bg-zinc-800 odd:bg-slate-100 dark:even-zinc-900 dark:odd:bg-slate-900"}`}>
+                  <tr class={`text-lato text-lg h-20 ${time.isBreak ? "bg-sky-300 dark:bg-sky-900" : "light:even:bg-zinc-800 odd:bg-slate-100 dark:even-zinc-900 dark:odd:bg-slate-900"}`}>
                     {!time.isBreak ? (
                       <td class="pl-3">{time.JAM}</td>
                       <td class="text-center">
