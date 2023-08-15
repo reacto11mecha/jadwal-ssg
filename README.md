@@ -61,7 +61,7 @@ pnpm start
 
 ## Local Development
 
-Anda bisa melakukan perubahan secara local dan mengubah tampilan atau apapun sesuka hati. Cara tersebut sudah dijelaskan pada poin [`pemaikaian`](#pemakaian).
+Anda bisa melakukan perubahan secara local dan mengubah tampilan atau apapun sesuka hati. Cara tersebut sudah dijelaskan pada poin [`pemakaian`](#pemakaian).
 
 ## Lisensi
 
