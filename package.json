@@ -10,26 +10,28 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/partytown": "^1.2.3",
-    "@astrojs/react": "^2.2.1",
-    "@astrojs/tailwind": "^4.0.0",
-    "@fontsource/lato": "^5.0.5",
-    "@fontsource/poppins": "^5.0.5",
-    "astro": "^2.9.1",
-    "luxon": "^3.3.0",
+    "@astrojs/check": "^0.2.0",
+    "@astrojs/partytown": "^2.0.0",
+    "@astrojs/react": "^3.0.0",
+    "@astrojs/tailwind": "^5.0.0",
+    "@fontsource/lato": "^5.0.11",
+    "@fontsource/poppins": "^5.0.8",
+    "astro": "^3.0.7",
+    "luxon": "^3.4.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.10.1",
+    "sharp": "^0.32.5",
     "tailwindcss": "^3.0.24",
     "workbox-window": "^7.0.0",
-    "zod": "^3.21.4"
+    "zod": "^3.22.2"
   },
   "devDependencies": {
-    "@types/luxon": "^3.3.1",
-    "@types/react": "^18.0.21",
+    "@types/luxon": "^3.3.2",
+    "@types/react": "^18.2.21",
     "@types/react-dom": "^18.0.6",
-    "@vite-pwa/astro": "^0.1.1",
-    "typescript": "^5.1.6",
+    "@vite-pwa/astro": "^0.1.2",
+    "typescript": "^5.2.2",
     "vite-plugin-pwa": "^0.16.4"
   }
 }

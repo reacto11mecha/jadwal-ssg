@@ -8,7 +8,6 @@
       "@layouts/*": ["src/layouts/*"],
       "@components/*": ["src/components/*"]
     },
-    "verbatimModuleSyntax": true,
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   }
