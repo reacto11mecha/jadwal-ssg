@@ -50,15 +50,15 @@ export const ClassNavigator = ({ currentClass, classList }: Props) => {
               </option>
             ))}
           </select>
-          <button
-            className="px-3 dark:bg-zinc-900 dark:border-sm dark:border-zinc-900 bg-gray-50 border rounded-md"
+          <a
+            className="px-3 dark:bg-zinc-900 dark:border-sm dark:border-zinc-900 bg-gray-50 border rounded-md flex items-center"
+            href="/student"
             onClick={() => {
               localStorage.removeItem("favorite-class");
-              document.location = "/student";
             }}
           >
             <IoMdArrowRoundBack />
-          </button>
+          </a>
           <a
             href="https://github.com/reacto11mecha/jadwal-ssg"
             target="_blank"

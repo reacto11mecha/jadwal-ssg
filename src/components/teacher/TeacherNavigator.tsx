@@ -53,15 +53,15 @@ export const TeacherNavigator = ({ currentTeacher, teacherList }: Props) => {
               </option>
             ))}
           </select>
-          <button
-            className="px-3 dark:bg-zinc-900 dark:border-sm dark:border-zinc-900 bg-gray-50 border rounded-md"
+          <a
+            className="px-3 dark:bg-zinc-900 dark:border-sm dark:border-zinc-900 bg-gray-50 border rounded-md flex items-center"
+            href="/teacher"
             onClick={() => {
               localStorage.removeItem("favorite-teacher");
-              document.location = "/teacher";
             }}
           >
             <IoMdArrowRoundBack />
-          </button>
+          </a>
           <button
             className="px-3 dark:bg-zinc-900 dark:border-sm dark:border-zinc-900 bg-gray-50 border rounded-md flex justify-center items-center"
             onClick={(e) => {
