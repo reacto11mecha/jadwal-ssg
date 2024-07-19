@@ -3,7 +3,7 @@ import { registerSW } from "virtual:pwa-register";
 window.addEventListener("load", () => {
   const pwaToast = document.querySelector<HTMLDivElement>("#pwa-toast")!;
   const pwaToastMessage = pwaToast.querySelector<HTMLDivElement>(
-    ".message #toast-message"
+    ".message #toast-message",
   )!;
   const pwaCloseBtn = pwaToast.querySelector<HTMLButtonElement>("#pwa-close")!;
   const pwaRefreshBtn =

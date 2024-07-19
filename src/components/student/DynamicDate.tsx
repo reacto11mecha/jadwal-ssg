@@ -47,7 +47,7 @@ export const DynamicDate = ({
         .setLocale("id-ID");
 
       setDate(time.toLocaleString(DateTime.DATE_FULL));
-    }
+    };
 
     setTime();
   }, []);

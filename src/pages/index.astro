@@ -8,12 +8,21 @@ import { IndexFooter } from "@components/IndexFooter";
   title="Daftar Jadwal Belajar dan Mengajar SMA Negeri 12 Kota Bekasi"
   description="Daftar Jadwal Belajar dan Mengajar SMAN 12 Bekasi"
 >
-  <header class="pt-[1.8rem] w-full flex justify-center">
+  <header
+    class="pt-[1.8rem] w-full flex flex-col items-center gap-3 justify-center"
+  >
     <h1
       class="text-center text-poppins text-4xl lg:text-5xl font-medium w-[50%] sm:w-[80%] md:w-auto"
     >
       Jadwal Belajar dan Mengajar
     </h1>
+    <div class="flex flex-col md:flex-row md:gap-2 items-center">
+      <h2 class="scroll-m-20 text-xl tracking-tight">SMA Negeri 12 Bekasi</h2>
+      <h2 class="scroll-m-20 text-xl hidden md:block tracking-tight">|</h2>
+      <h2 class="scroll-m-20 md:text-xl tracking-tight">
+        Tahun ajaran 2024/2025
+      </h2>
+    </div>
   </header>
 
   <main class="py-10 pb-20 px-5">

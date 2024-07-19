@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-import { BsGithub, BsFillMoonFill, BsSun } from "react-icons/bs/index";
-import { IoMdArrowRoundBack } from "react-icons/io/index";
+import { BsGithub, BsFillMoonFill, BsSun } from "react-icons/bs";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 type Props = {
   currentClass: string;
@@ -14,8 +14,8 @@ export const ClassNavigator = ({ currentClass, classList }: Props) => {
   useEffect(() => {
     setDarkMode(
       localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches),
     );
   }, []);
 
@@ -74,8 +74,9 @@ export const ClassNavigator = ({ currentClass, classList }: Props) => {
               toggleTheme();
               (e.target as HTMLElement).blur();
             }}
-            aria-label={`Ubah tema halaman menjadi ${isDarkMode ? "cerah" : "gelap"
-              }`}
+            aria-label={`Ubah tema halaman menjadi ${
+              isDarkMode ? "cerah" : "gelap"
+            }`}
           >
             {isDarkMode ? <BsFillMoonFill /> : <BsSun />}
           </button>

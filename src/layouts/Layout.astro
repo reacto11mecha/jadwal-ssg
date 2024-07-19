@@ -5,8 +5,6 @@ import "@fontsource/poppins";
 import ReloadPrompt from "@components/ReloadPrompt.astro";
 import { pwaInfo } from "virtual:pwa-info";
 
-import { ViewTransitions } from "astro:transitions";
-
 export interface Props {
   title: string;
   description: string;
@@ -16,7 +14,7 @@ const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" transition:animate="slide">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -30,10 +28,7 @@ const { title, description } = Astro.props;
 
     <title>{title}</title>
 
-    <ViewTransitions />
-
     <script is:inline>
-      const setDarkMode = () => {
         if (
           localStorage.theme === "dark" ||
           (!("theme" in localStorage) &&
@@ -43,11 +38,6 @@ const { title, description } = Astro.props;
         } else {
           document.documentElement.classList.remove("dark");
         }
-      }
-
-      setDarkMode();
-
-      document.addEventListener("astro:after-swap", setDarkMode)
     </script>
 
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}

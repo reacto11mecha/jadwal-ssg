@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { BsGithub, BsFillMoonFill, BsSun } from "react-icons/bs/index";
+import { BsGithub, BsFillMoonFill, BsSun } from "react-icons/bs";
 
 export const IndexFooter = () => {
   const [isDarkMode, setDarkMode] = useState(false);
@@ -8,8 +8,8 @@ export const IndexFooter = () => {
   useEffect(() => {
     setDarkMode(
       localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches),
     );
   }, []);
 
@@ -46,8 +46,9 @@ export const IndexFooter = () => {
               toggleTheme();
               (e.target as HTMLElement).blur();
             }}
-            aria-label={`Ubah tema halaman menjadi ${isDarkMode ? "cerah" : "gelap"
-              }`}
+            aria-label={`Ubah tema halaman menjadi ${
+              isDarkMode ? "cerah" : "gelap"
+            }`}
           >
             {isDarkMode ? <BsFillMoonFill /> : <BsSun />}
           </button>

@@ -21,14 +21,14 @@ export const JadwalStudentJson = z
           lessons: z
             .array(
               z.object({
-                lesson: z.string(),
-                name: z.string().optional(),
-              })
+                lesson: z.string().nullish(),
+                name: z.string().nullish(),
+              }),
             )
             .nonempty(),
-        })
+        }),
       ),
-    })
+    }),
   )
   .nonempty();
 
@@ -61,12 +61,12 @@ export const JadwalTeacherJson = z
               z.object({
                 kelas: z.string().optional(),
                 isBreak: z.boolean().optional(),
-              })
+              }),
             )
             .nonempty(),
-        })
+        }),
       ),
-    })
+    }),
   )
   .nonempty();
 
@@ -92,10 +92,10 @@ export const WaktuJson = z.object({
 
             // Properti yang wajib ada
             WAKTU: z.array(z.string()),
-          })
+          }),
         ),
         currentDay: dayValidation,
-      })
+      }),
     )
     .nonempty(),
   TZ: z.string(),

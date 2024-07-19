@@ -6,7 +6,7 @@ import type { ITimeAllocation, IIndividualTeacher } from "@utils/schedule";
 
 type Props = {
   Timezone: string;
-  schedule: IIndividualTeacher['className'][number];
+  schedule: IIndividualTeacher["className"][number];
   allSchedulesLength: number;
   alloc: ITimeAllocation["alloc"];
 };
@@ -42,12 +42,15 @@ export const DynamicDate = ({
         .plus({ weeks: isNextWeek ? 1 : 0 })
         .startOf("week")
         .plus({
-          days: schedule.currentDay > 1 && schedule.currentDay <= 7 ? schedule.currentDay - 1 : 0,
+          days:
+            schedule.currentDay > 1 && schedule.currentDay <= 7
+              ? schedule.currentDay - 1
+              : 0,
         })
         .setLocale("id-ID");
 
       setDate(time.toLocaleString(DateTime.DATE_FULL));
-    }
+    };
 
     setTime();
   }, []);

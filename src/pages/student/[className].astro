@@ -63,14 +63,23 @@ const { className, schedules } = Astro.props as IIndividualClassStudent;
             <tbody class="gap-5">
               {timeAlloc
                 .find((time) => time.currentDay === schedule.day)!
-                .alloc.map((time) => (
+                .alloc.filter(d => {
+                  // Cek jika tidak ada jam pada saat ini
+                  if (d.JAM) {
+                    const currentJam = schedule.lessons.at(d.JAM - 1)!;
+
+                    return currentJam.lesson
+                  }
+
+                  return true;
+                }).map((time) => (
                   <tr class={`text-lato text-lg h-12 ${time.isBreak ? "bg-sky-300 dark:bg-sky-900" : "light:even:bg-zinc-800 odd:bg-slate-100 dark:even-zinc-900 dark:odd:bg-slate-900"}`}>
                     {!time.isBreak ? (
                       <td class="pl-3">{time.JAM}</td>
                       <td class="text-center py-3 flex flex-col">
                         <p>
                           <span class="font-semibold">{schedule.lessons[time.JAM! - 1].lesson ?? ""}</span>
-                          {schedule.lessons[time.JAM! - 1].lesson === "SUNDA" && (
+                          {schedule.lessons[time.JAM! - 1].lesson?.includes("SUNDA") && (
                             <>
                               {"  "}
                               <small>
