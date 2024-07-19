@@ -2,11 +2,14 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import AstroPWA from "@vite-pwa/astro";
 import react from "@astrojs/react";
-
 import partytown from "@astrojs/partytown";
+import sitemap from "@astrojs/sitemap";
+
+import robotsTxt from "astro-robots-txt";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://jadwal.rmecha.my.id",
   integrations: [
     tailwind(),
     react(),
@@ -62,5 +65,7 @@ export default defineConfig({
         forward: ["dataLayer.push"],
       },
     }),
+    sitemap(),
+    robotsTxt(),
   ],
 });
