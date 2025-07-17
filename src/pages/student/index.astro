@@ -36,7 +36,7 @@ const classList = scheduleDataSafe.map((schedule) => schedule.className);
         </p>
       </div>
       <select
-        class="border rounded bg-white dark:border-neutral-900 dark:border-sm dark:bg-neutral-900 w-full h-10 sm:h-10 md:h-auto md:w-32"
+        class="border rounded border-neutral-300 bg-white dark:border-neutral-900 dark:border-sm dark:bg-neutral-900 w-full h-10 sm:h-10 md:h-auto md:w-32"
       >
         <option value="">Pilih kelas</option>
         {
@@ -52,7 +52,7 @@ const classList = scheduleDataSafe.map((schedule) => schedule.className);
       {
         classList.map((className) => (
           <a
-            class="rounded border dark:border-neutral-900 dark:border-sm dark:bg-neutral-900 font-lato text-lg p-5 text-center"
+            class="rounded border border-neutral-300 dark:border-neutral-900 dark:border-sm dark:bg-neutral-900 font-lato text-lg p-5 text-center"
             href={`/student/${className}`}
           >
             {className}

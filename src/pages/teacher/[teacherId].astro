@@ -53,7 +53,7 @@ const { teacherName, teacherId, className } = Astro.props as IIndividualTeacher;
   >
     {
       className.map((currentClass) => (
-        <div class="border rounded dark:border-sm dark:bg-neutral-900 dark:border-neutral-900 p-5" data-day={currentClass.currentDay}>
+        <div class="border rounded border-neutral-300 dark:border-sm dark:bg-neutral-900 dark:border-neutral-900 p-5" data-day={currentClass.currentDay}>
           <h3 class="pb-3 text-poppins font-semibold text-lg md:text-xl">
             {getDay(currentClass.currentDay)}<DynamicDate client:idle Timezone={Timezone} alloc={timeAlloc
                 .find((time) => time.currentDay === currentClass.currentDay)!.alloc} allSchedulesLength={currentClass.alloc.length} schedule={className.find(curr => curr.currentDay === currentClass.currentDay)!} />
