@@ -1485,12 +1485,12 @@
             "name": "Nita Dianty, S.Pd."
           },
           {
-            "lesson": "INGGRIS / INDO",
-            "name": "Nita Dianty, S.Pd."
+            "lesson": "PKWU",
+            "name": "H. Nurhidayatullah, M.Ag."
           },
           {
-            "lesson": "INGGRIS / INDO",
-            "name": "Nita Dianty, S.Pd."
+            "lesson": "PKWU",
+            "name": "H. Nurhidayatullah, M.Ag."
           },
           {
             "lesson": "KIM",
@@ -6882,7 +6882,7 @@
     ]
   },
   {
-    "className": "XII--BHS",
+    "className": "XII-BHS",
     "schedules": [
       {
         "day": 1,
